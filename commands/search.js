@@ -72,7 +72,7 @@ module.exports = {
         );
 
         let em = new MessageEmbed()
-          .setAuthor("Search Results of " + SearchString, client.config.IconURL)
+          .setAuthor("Hasil pencarian dari  " + SearchString, client.config.IconURL)
           .setColor("RANDOM")
           .setDescription(MappedSongs.join("\n"));
         return em;
@@ -85,7 +85,7 @@ module.exports = {
       let w = (a) => new Promise((r) => setInterval(r, a));
       await w(500); //waits 500ms cuz needed to wait for the above song search embed to send ._.
       let msg = await message.channel.send(
-        "**Type the number of the song you want to play! Expires in `30 seconds`.**"
+        "**Inputkan angka musik yang ingin diputar! Expires in `30 seconds`.**"
       );
 
       let er = false;

@@ -28,7 +28,7 @@ const { TrackUtils } = require("erela.js");
     if (!player.queue || !player.queue.length || player.queue.length === 0)
       return message.channel.send("There is nothing in the queue to remove");
     let rm = new MessageEmbed()
-      .setDescription(`✅ **|** Berhasil menghapus antrian nomor  **\`${Number(args[0])}\`** dalam antrian!`)
+      .setDescription(`✅ **|** Berhasil menghapus nomor  **\`${Number(args[0])}\`** dalam antrian!`)
       .setColor("GREEN")
       if (isNaN(args[0]))rm.setDescription(`**Usage - **${client.config.prefix}\`remove [track]\``);
       if (args[0] > player.queue.length)
@@ -66,7 +66,7 @@ const { TrackUtils } = require("erela.js");
       if (!player.queue || !player.queue.length || player.queue.length === 0)
       return client.sendTime("❌ | **Tidak ada yang sedang diputar. . .**");
       let rm = new MessageEmbed()
-        .setDescription(`✅ | **Berhasil menghapus antrian nomor ** \`${Number(args[0])}\` dalam antrian!`)
+        .setDescription(`✅ | **Berhasil menghapus nomor ** \`${Number(args[0])}\` dalam antrian!`)
         .setColor("GREEN")
       if (isNaN(args[0])) rm.setDescription(`**Usage:** \`${GuildDB.prefix}remove [track]\``);
       if (args[0] > player.queue.length)
