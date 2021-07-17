@@ -60,7 +60,7 @@ module.exports = {
         s.index = i;
         return s;
       });
-      let songs = _.chunk(Searched.tracks, 10);
+      let songs = _.chunk(Searched.tracks, 20);
       let Pages = songs.map((songz) => {
         let MappedSongs = songz.map(
           (s) =>
