@@ -33,13 +33,13 @@ module.exports = {
             .setFooter(
               `To get info of each command type ${
                 GuildDB ? GuildDB.prefix : client.config.DefaultPrefix
-              }help [Command] | Have a nice day!`
+              }help [Command] | Have a nice kontol cok!`
             ).setDescription(`${Commands.join("\n")}
   
   Discord Music Bot Version: v${require("../package.json").version}
-  [✨ Support Server](${
+  [✨  ](${
     client.config.SupportServer
-  }) | [GitHub](https://github.com/SudhanPlayz/Discord-MusicBot) | By [SudhanPlayz](https://github.com/SudhanPlayz)`);
+  }) |`);
     if (!args[0]) message.channel.send(Embed);
     else {
       let cmd =
@@ -120,7 +120,7 @@ SlashCommand: {
   Discord Music Bot Version: v${require("../package.json").version}
   [✨ Support Server](${
     client.config.SupportServer
-  }) | [GitHub](https://github.com/syihabuddin) | By [Sh3hub1337](https://github.com/syihabuddin)`);
+  }) | [GitHub](jajajajan) | By [jajajaja)`);
       if (!args) return interaction.send(Embed);
       else {
         let cmd =
