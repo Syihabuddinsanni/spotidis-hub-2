@@ -52,7 +52,7 @@ module.exports = {
                     for (let i = 0; i < Searched.tracks.length; i++) songs.push(TrackUtils.build(Searched.tracks[i], message.author));
                     player.queue.add(songs);
                     if (!player.playing && !player.paused && player.queue.totalSize === Searched.tracks.length) player.play();
-                    SongAddedEmbed.setAuthor(`Playlist ****DITAMBAHKAN KE ANTRIAN****`, message.author.displayAvatarURL());
+                    SongAddedEmbed.setAuthor(`Playlist **DITAMBAHKAN KE ANTRIAN**`, message.author.displayAvatarURL());
                     SongAddedEmbed.addField("Enqueued", `\`${Searched.tracks.length}\` songs`, false);
                     //SongAddedEmbed.addField("Playlist duration", `\`${prettyMilliseconds(Searched.tracks, { colonNotation: true })}\``, false)
                     Searching.edit(SongAddedEmbed);
