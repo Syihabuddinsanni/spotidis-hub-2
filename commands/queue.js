@@ -62,7 +62,7 @@ module.exports = {
     let Pages = ChunkedSongs.map((Tracks) => {
       let SongsDescription = Tracks.map(
         (t) =>
-          `\`${t.index + 1}.\` [${t.title}](${t.uri}) \n\`${prettyMilliseconds(
+          `\`${t.index + 1}.\` [\`\`\ ${t.title} \`\`\] - (${t.uri}) \n\`${prettyMilliseconds(
             t.duration,
             {
               colonNotation: true,

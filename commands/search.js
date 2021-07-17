@@ -64,7 +64,7 @@ module.exports = {
       let Pages = songs.map((songz) => {
         let MappedSongs = songz.map(
           (s) =>
-            `\`${s.index + 1}\`| [\`\`\ ${s.title} \`\`\](${ //titile
+            `\`${s.index + 1}\`| [\`\`\ ${s.title} \`\`\](${ //mbot UI
               s.uri
             }) \ - \`${prettyMilliseconds(s.duration, {
               colonNotation: true,
