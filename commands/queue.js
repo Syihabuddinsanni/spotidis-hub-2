@@ -68,7 +68,7 @@ module.exports = {
               colonNotation: true,
             }
           )}\` **|** ${t.requester}\n`
-      ).join("\n");
+      ).join("");
 
       let Embed = new MessageEmbed()
         .setAuthor("Queue", client.config.IconURL)
