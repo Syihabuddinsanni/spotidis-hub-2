@@ -96,12 +96,10 @@ module.exports = {
           time: 30000,
         })
         .catch(() => {
-          ConfigMessage.reactions.removeAll();
           er = true;
-          ConfigMessage.reactions.removeAll();
           msg.edit(
             "**You took too long to respond. Run the command again if you want to play something!**"
-          );
+          );  ConfigMessage.delete(Config);
         });
       if (er) return;
       /**@type {Message} */
