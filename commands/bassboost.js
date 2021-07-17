@@ -8,7 +8,7 @@ const levels = {
 };
 module.exports = {
     name: "bassboost",
-    description: "Enables bass boosting audio effect",
+    description: "Mengaktifkan bass boosting audio ", //Enables bass boosting audio 
     usage: "<none|low|medium|high>",
     permissions: {
         channel: ["VIEW_CHANNEL", "SEND_MESSAGES", "EMBED_LINKS"],

@@ -3,7 +3,7 @@ const { TrackUtils } = require("erela.js");
 
 module.exports = {
     name: "loopqueue",
-    description: "Loop the whole queue",
+    description: "Mengulang musik yang sedang diputar dalam (queue)", //Loop the whole queue
     usage: "",
     permissions: {
       channel: ["VIEW_CHANNEL", "SEND_MESSAGES", "EMBED_LINKS"],

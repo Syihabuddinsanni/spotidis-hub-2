@@ -3,7 +3,7 @@ const { TrackUtils } = require("erela.js");
 
 module.exports = {
     name: "volume",
-    description: "Check or change the current volume",
+    description: "Mengecek atau mengganti volume", //Check or change the current volume
     usage: "<volume>",
     permissions: {
         channel: ["VIEW_CHANNEL", "SEND_MESSAGES", "EMBED_LINKS"],

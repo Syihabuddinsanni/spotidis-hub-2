@@ -2,7 +2,7 @@ const { MessageEmbed } = require("discord.js");
 
 module.exports = {
     name: "shuffle",
-    description: "Shuffles the queue",
+    description: "Mengacak daftar antrian", //Shuffles the queue
     usage: "",
     permissions: {
         channel: ["VIEW_CHANNEL", "SEND_MESSAGES", "EMBED_LINKS"],

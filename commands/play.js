@@ -4,7 +4,7 @@ const prettyMilliseconds = require("pretty-ms");
 
 module.exports = {
     name: "play",
-    description: "Play your favorite songs",
+    description: "Memutar musik favoritmu", //Play your favorite songs
     usage: "[song]",
     permissions: {
         channel: ["VIEW_CHANNEL", "SEND_MESSAGES", "EMBED_LINKS"],

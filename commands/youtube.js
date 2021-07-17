@@ -2,7 +2,7 @@ const { MessageEmbed } = require("discord.js");
 
 module.exports = {
     name: "youtube",
-    description: "Starts a YouTube Together session",
+    description: "Memulai sesi Youtube Together Session", //Starts a YouTube Together session
     usage: "",
     permissions: {
         channel: ["VIEW_CHANNEL", "SEND_MESSAGES", "EMBED_LINKS"],
