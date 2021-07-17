@@ -115,7 +115,8 @@ SlashCommand: {
               }help [Command] | Have a nice day!`
             ).setDescription(`${Commands.join("\n")}
   Discord Music Bot Version: 0.91 **(Beta Version)**
-  [✨ Support Server](https://discord.gg/shehdSk8s3) | [GitHub](https://github.com/syihabuddin) | By [Sh3hub1337](https://github.com/syihabuddin) `);
+  [✨ Support Server](https://discord.gg/shehdSk8s3) | [GitHub](https://github.com/syihabuddin) | By [Sh3hub1337](https://github.com/syihabuddin) 
+  https://cdn.discordapp.com/attachments/752712711556694057/865839960137007144/PicsArt_07-17-01.18.11.jpg`);
       if (!args) return interaction.send(Embed);
       else {
         let cmd =
