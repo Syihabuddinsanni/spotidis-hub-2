@@ -21,10 +21,10 @@ module.exports = {
         let player = await client.Manager.get(message.guild.id);
         if (!player) return client.sendTime(message.channel, "❌ | **Tidak ada musik yang diputar**"); //Nothing is playing right now...
         if (!message.member.voice.channel) return client.sendTime(message.channel, "❌ | **Masuk voice channel dulu sobad...**");
-        if (message.guild.me.voice.channel && message.member.voice.channel.id !== message.guild.me.voice.channel.id) return client.sendTime(message.channel, ":x: | **You must be in the same voice channel as me to use this command!**");
+        if (message.guild.me.voice.channel && message.member.voice.channel.id !== message.guild.me.voice.channel.id) return client.sendTime(message.channel, ":x: | **Bot nya lagi dipake cuk!**");
         if (player.paused) return client.sendTime(message.channel, "❌ | **Music sudah dihentikan!**"); //Music already paused!
         player.pause(true);
-        let embed = new MessageEmbed().setAuthor(`Paused!`, client.config.IconURL).setColor("RANDOM").setDescription(`Type \`${GuildDB.prefix}resume\` to continue playing!`);
+        let embed = new MessageEmbed().setAuthor(`Di pause!`, client.config.IconURL).setColor("RANDOM").setDescription(`Type \`${GuildDB.prefix}resume\` to untuk melanjutkan!`);
         await message.channel.send(embed);
         await message.react("✅");
     },
@@ -41,14 +41,14 @@ module.exports = {
             const guild = client.guilds.cache.get(interaction.guild_id);
             const member = guild.members.cache.get(interaction.member.user.id);
 
-            if (!member.voice.channel) return client.sendTime(interaction, "❌ | **You must be in a voice channel to use this command.**");
-            if (guild.me.voice.channel && !guild.me.voice.channel.equals(member.voice.channel)) return client.sendTime(interaction, ":x: | **You must be in the same voice channel as me to use this command!**");
+            if (!member.voice.channel) return client.sendTime(interaction, "❌ | **Masuk ke voice channel dulu sobad!**");
+            if (guild.me.voice.channel && !guild.me.voice.channel.equals(member.voice.channel)) return client.sendTime(interaction, ":x: | **Bot nya lagi dipake cuk!**");
 
             let player = await client.Manager.get(interaction.guild_id);
-            if (!player) return client.sendTime(interaction, "❌ | **Nothing is playing right now...**");
-            if (player.paused) return client.sendTime(interaction, "Music is already paused!");
+            if (!player) return client.sendTime(interaction, "❌ | **Tidak ada yang sedang diputar...**");
+            if (player.paused) return client.sendTime(interaction, "Music sudah Di hentikan!");
             player.pause(true);
-            client.sendTime(interaction, "**⏸ Paused!**");
+            client.sendTime(interaction, "**⏸ Di pause!**");
         },
     },
 };
