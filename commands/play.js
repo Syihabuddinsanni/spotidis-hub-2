@@ -35,7 +35,7 @@ module.exports = {
             selfDeafen: false,
         });
 
-        let SongAddedEmbed = new MessageEmbed().setColor("RANDOM");
+        let SongAddedEmbed = new MessageEmbed().setColor("#A9A9A9");
 
         if (!player) return client.sendTime(message.channel, "❌ | **Nothing is playing right now...**");
 
@@ -158,7 +158,7 @@ module.exports = {
                         if (!player.playing && !player.paused && !player.queue.length) player.play();
                         let SongAddedEmbed = new MessageEmbed();
                             SongAddedEmbed.setAuthor(`Ditambahkan ke antrian`, client.config.IconURL);
-                            SongAddedEmbed.setColor("RANDOM");
+                            SongAddedEmbed.setColor("#A9A9A9");
                             SongAddedEmbed.setDescription(`[${Searched.tracks[0].info.title}](${Searched.tracks[0].info.uri})`);
                             SongAddedEmbed.addField("Author", Searched.tracks[0].info.author, true);
                             if (player.queue.totalSize > 1) SongAddedEmbed.addField("Posisi di antrian", `${player.queue.size - 0}`, true);
@@ -169,7 +169,7 @@ module.exports = {
                         if (!player.playing && !player.paused && !player.queue.length) player.play();
                         let SongAdded = new MessageEmbed();
                             SongAdded.setAuthor(`Ditambahkan ke antrian`, client.config.IconURL);
-                            SongAdded.setColor("RANDOM");
+                            SongAdded.setColor("#A9A9A9");
                             SongAdded.setDescription(`[${Searched.tracks[0].info.title}](${Searched.tracks[0].info.uri})`);
                             SongAdded.addField("Author", Searched.tracks[0].info.author, true);
                             if (player.queue.totalSize > 1) SongAdded.addField("Posisi di antrian", `${player.queue.size - 0}`, true);
@@ -233,7 +233,7 @@ module.exports = {
                             let SongAddedEmbed = new MessageEmbed();
                             SongAddedEmbed.setAuthor(`Ditambahkan ke antrian`, client.config.IconURL);
                             SongAddedEmbed.setThumbnail(track.displayThumbnail());
-                            SongAddedEmbed.setColor("RANDOM");
+                            SongAddedEmbed.setColor("#A9A9A9");
                             SongAddedEmbed.setDescription(`[${track.title}](${track.uri})`);
                             SongAddedEmbed.addField("Author", track.author, true);
                             SongAddedEmbed.addField("Durasi", `\`${prettyMilliseconds(track.duration, { colonNotation: true })}\``, true);
@@ -245,7 +245,7 @@ module.exports = {
                             let SongAddedEmbed = new MessageEmbed();
                             SongAddedEmbed.setAuthor(`Ditambahkan ke antrian`, client.config.IconURL);
                             SongAddedEmbed.setThumbnail(track.displayThumbnail());
-                            SongAddedEmbed.setColor("RANDOM");
+                            SongAddedEmbed.setColor("#A9A9A9");
                             SongAddedEmbed.setDescription(`[${track.title}](${track.uri})`);
                             SongAddedEmbed.addField("Author", track.author, true);
                             SongAddedEmbed.addField("Durasi", `\`${prettyMilliseconds(track.duration, { colonNotation: true })}\``, true);

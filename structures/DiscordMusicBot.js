@@ -235,7 +235,7 @@ class DiscordMusicBot extends Client {
   }
 
   sendTime(Channel, Error) {
-    let embed = new MessageEmbed().setColor("RANDOM").setDescription(Error);
+    let embed = new MessageEmbed().setColor("#FF0000").setDescription(Error);  //red color
 
     Channel.send(embed);
   }
