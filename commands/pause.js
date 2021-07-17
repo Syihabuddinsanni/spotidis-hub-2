@@ -24,7 +24,7 @@ module.exports = {
         if (message.guild.me.voice.channel && message.member.voice.channel.id !== message.guild.me.voice.channel.id) return client.sendTime(message.channel, ":x: | **Bot nya lagi dipake cuk!**");
         if (player.paused) return client.sendTime(message.channel, "❌ | **Music sudah dihentikan!**"); //Music already paused!
         player.pause(true);
-        let embed = new MessageEmbed().setAuthor(`Di pause!`, client.config.IconURL).setColor("RANDOM").setDescription(`Type \`${GuildDB.prefix}resume\` to untuk melanjutkan!`);
+        let embed = new MessageEmbed().setAuthor(`Di pause!`, client.config.IconURL).setColor("RANDOM").setDescription(`Type \`${GuildDB.prefix}resume\` untuk melanjutkan!`);
         await message.channel.send(embed);
         await message.react("✅");
     },

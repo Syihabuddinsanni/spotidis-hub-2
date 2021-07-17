@@ -28,14 +28,14 @@ module.exports = {
 
     if (!player.queue || !player.queue.length || player.queue === 0) {
       let QueueEmbed = new MessageEmbed()
-        .setAuthor("Currently playing", client.config.IconURL)
+        .setAuthor("Sedang Memutar", client.config.IconURL)
         .setColor("RANDOM")
         .setDescription(
           `[${player.queue.current.title}](${player.queue.current.uri})`
         )
         .addField("Requested by", `${player.queue.current.requester}`, true)
         .addField(
-          "Duration",
+          "Durasi",
           `${
             client.ProgressBar(
               player.position,
@@ -74,7 +74,7 @@ module.exports = {
         .setAuthor("Queue", client.config.IconURL)
         .setColor("RANDOM")
         .setDescription(
-          `**Currently Playing:** \n[${player.queue.current.title}](${player.queue.current.uri}) \n\n**Up Next:** \n${SongsDescription}\n\n`
+          `**Sedang Memutar:** \n[${player.queue.current.title}](${player.queue.current.uri}) \n\n**Up Next:** \n${SongsDescription}\n\n`
         )
         .addField("Total songs: \n", `\`${player.queue.totalSize - 1}\``, true)
         .addField(
@@ -86,7 +86,7 @@ module.exports = {
         )
         .addField("Requested by:", `${player.queue.current.requester}`, true)
         .addField(
-          "Current song duration:",
+          "Durasi music sekarang:",
           `${
             client.ProgressBar(
               player.position,
@@ -134,7 +134,7 @@ module.exports = {
 
       if (!player.queue || !player.queue.length || player.queue === 0) {
         let QueueEmbed = new MessageEmbed()
-          .setAuthor("Currently playing", client.config.IconURL)
+          .setAuthor("Sedang Memutar", client.config.IconURL)
           .setColor("RANDOM")
           .setDescription(
             `[${player.queue.current.title}](${player.queue.current.uri})`
@@ -179,7 +179,7 @@ module.exports = {
           .setAuthor("Queue", client.config.IconURL)
           .setColor("RANDOM")
           .setDescription(
-            `**Currently Playing:** \n[${player.queue.current.title}](${player.queue.current.uri}) \n\n**Up Next:** \n${SongsDescription}\n\n`
+            `**Sedang Memutar:** \n[${player.queue.current.title}](${player.queue.current.uri}) \n\n**Up Next:** \n${SongsDescription}\n\n`
           )
           .addField(
             "Total songs: \n",
@@ -195,7 +195,7 @@ module.exports = {
           )
           .addField("Requested by:", `${player.queue.current.requester}`, true)
           .addField(
-            "Current song duration:",
+            "Durasi musik sekarang:",
             `${
               client.ProgressBar(
                 player.position,
