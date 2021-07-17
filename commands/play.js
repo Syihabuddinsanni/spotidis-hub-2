@@ -19,8 +19,8 @@ module.exports = {
      * @param {*} param3
      */
     run: async (client, message, args, { GuildDB }) => {
-        if (!message.member.voice.channel) return client.sendTime(message.channel, "❌ | **Bot nya lagi dipake anying**"); //You must be in a voice channel to play something!
-        if (message.guild.me.voice.channel && message.member.voice.channel.id !== message.guild.me.voice.channel.id) return client.sendTime(message.channel, ":x: | **You must be in the same voice channel as me to use this command!**");
+        if (!message.member.voice.channel) return client.sendTime(message.channel, "❌ | **Masuk voice channel dulu sobad!**"); //You must be in a voice channel to play something!
+        if (message.guild.me.voice.channel && message.member.voice.channel.id !== message.guild.me.voice.channel.id) return client.sendTime(message.channel, ":x: | **Bot nya lagi dipake anying**"); //You must be in the same voice channel as me to use this command!
         let SearchString = args.join(" ");
         if (!SearchString) return client.sendTime(message.channel, `**Usage - **\`${GuildDB.prefix}play [song]\``);
         let CheckNode = client.Manager.nodes.get(client.config.Lavalink.id);
@@ -52,14 +52,14 @@ module.exports = {
                     for (let i = 0; i < Searched.tracks.length; i++) songs.push(TrackUtils.build(Searched.tracks[i], message.author));
                     player.queue.add(songs);
                     if (!player.playing && !player.paused && player.queue.totalSize === Searched.tracks.length) player.play();
-                    SongAddedEmbed.setAuthor(`Playlist added to queue`, message.author.displayAvatarURL());
+                    SongAddedEmbed.setAuthor(`Playlist ditambahkan ke antrian`, message.author.displayAvatarURL());
                     SongAddedEmbed.addField("Enqueued", `\`${Searched.tracks.length}\` songs`, false);
                     //SongAddedEmbed.addField("Playlist duration", `\`${prettyMilliseconds(Searched.tracks, { colonNotation: true })}\``, false)
                     Searching.edit(SongAddedEmbed);
                 } else if (Searched.loadType.startsWith("TRACK")) {
                     player.queue.add(TrackUtils.build(Searched.tracks[0], message.author));
                     if (!player.playing && !player.paused && !player.queue.size) player.play();
-                    SongAddedEmbed.setAuthor(`Added to queue`, client.config.IconURL);
+                    SongAddedEmbed.setAuthor(`Ditambahkan ke antrian`, client.config.IconURL);
                     SongAddedEmbed.setDescription(`[${Searched.tracks[0].info.title}](${Searched.tracks[0].info.uri})`);
                     SongAddedEmbed.addField("Author", Searched.tracks[0].info.author, true);
                     //SongAddedEmbed.addField("Duration", `\`${prettyMilliseconds(Searched.tracks[0].length, { colonNotation: true })}\``, true);

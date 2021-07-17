@@ -19,10 +19,10 @@ module.exports = {
      */
     run: async (client, message, args, { GuildDB }) => {
         let player = await client.Manager.get(message.guild.id);
-        if (!player) return client.sendTime(message.channel, "❌ | **Nothing is playing right now...**");
-        if (!message.member.voice.channel) return client.sendTime(message.channel, "❌ | **You must be in a voice channel to use this command!**");
+        if (!player) return client.sendTime(message.channel, "❌ | **Tidak ada musik yang diputar**"); //Nothing is playing right now...
+        if (!message.member.voice.channel) return client.sendTime(message.channel, "❌ | **Masuk voice channel dulu sobad...**");
         if (message.guild.me.voice.channel && message.member.voice.channel.id !== message.guild.me.voice.channel.id) return client.sendTime(message.channel, ":x: | **You must be in the same voice channel as me to use this command!**");
-        if (player.paused) return client.sendTime(message.channel, "❌ | **Music dihentikan!**");
+        if (player.paused) return client.sendTime(message.channel, "❌ | **Music sudah dihentikan!**"); //Music already paused!
         player.pause(true);
         let embed = new MessageEmbed().setAuthor(`Paused!`, client.config.IconURL).setColor("RANDOM").setDescription(`Type \`${GuildDB.prefix}resume\` to continue playing!`);
         await message.channel.send(embed);
