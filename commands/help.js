@@ -117,8 +117,8 @@ SlashCommand: {
               }help [Command] | Have a nice day!`
             ).setDescription(`${Commands.join("\n")}
   
- 
-  [✨ Support Server](https://discord.gg/shehdSk8s3) | 
+  Discord Music Bot Version: v${require("../package.json").version}
+  ✨test | 
   [GitHub](https://github.com/syihabuddin) | By [Sh3hub1337](https://github.com/syihabuddin)`);
       if (!args) return interaction.send(Embed);
       else {
