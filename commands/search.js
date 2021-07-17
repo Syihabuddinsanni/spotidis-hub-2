@@ -74,7 +74,7 @@ module.exports = {
         let em = new MessageEmbed()
           .setAuthor("Search Results of " + SearchString, client.config.IconURL)
           .setColor("RANDOM")
-          .setDescription(MappedSongs.join("\n\n"));
+          .setDescription(MappedSongs.join("\n"));
         return em;
       });
 
