@@ -113,7 +113,7 @@ module.exports = {
       if (!player.playing && !player.paused && !player.queue.size)
         player.play();
       let SongAddedEmbed = new MessageEmbed();
-      SongAddedEmbed.setAuthor(`Added to queue`, client.config.IconURL);
+      SongAddedEmbed.setAuthor(`Ditambahkan ke antrian`, client.config.IconURL);
       SongAddedEmbed.setThumbnail(Song.displayThumbnail());
       SongAddedEmbed.setColor("#000000");
       SongAddedEmbed.setDescription(`[${Song.title}](${Song.uri})`);
@@ -205,7 +205,7 @@ module.exports = {
             if (!player.playing && !player.paused && !player.queue.length)
               player.play();
             return client.sendTime(
-              interaction, `**Ditambahkan ke antrian : ** \`[${Searched.tracks[0].info.title}](${Searched.tracks[0].info.uri}}\`.` //Added to queue:
+              interaction, `**Ditambahkan ke antrian : ** \`[${Searched.tracks[0].info.title}](${Searched.tracks[0].info.uri}}\`.` //Ditambahkan ke antrian:
             );
 
           case "PLAYLIST_LOADED":
@@ -221,7 +221,7 @@ module.exports = {
             )
               player.play();
             return client.sendTime(
-              interaction, `**Playlist ditambahkan ke antrian**: \n**${Searched.playlist.name}** \nEnqueued: **${Searched.playlistInfo.length} songs**`//Playlist added to queue
+              interaction, `**Playlist ditambahkan ke antrian**: \n**${Searched.playlist.name}** \nEnqueued: **${Searched.playlistInfo.length} songs**`//Playlist Ditambahkan ke antrian
             );
         }
       } else {
@@ -245,7 +245,7 @@ module.exports = {
             if (!player.playing && !player.paused && !player.queue.length)
               player.play();
             return client.sendTime(
-              interaction, `**Added to queue:** \`[${res.tracks[0].title}](${res.tracks[0].uri})\`.`
+              interaction, `**Ditambahkan ke antrian:** \`[${res.tracks[0].title}](${res.tracks[0].uri})\`.`
             );
           case "PLAYLIST_LOADED":
             player.queue.add(res.tracks);
@@ -257,7 +257,7 @@ module.exports = {
             )
               player.play();
             return client.sendTime(
-              interaction, `**Playlist added to queue**: \n**${res.playlist.name}** \nEnqueued: **${res.playlistInfo.length} songs**`
+              interaction, `**Playlist Ditambahkan ke antrian**: \n**${res.playlist.name}** \nEnqueued: **${res.playlistInfo.length} songs**`
             );
           case "SEARCH_RESULT":
             let max = 10,
@@ -318,7 +318,7 @@ module.exports = {
               player.play();
             } else {
               let SongAddedEmbed = new MessageEmbed();
-              SongAddedEmbed.setAuthor(`Added to queue`, client.config.IconURL);
+              SongAddedEmbed.setAuthor(`Ditambahkan ke antrian`, client.config.IconURL);
               SongAddedEmbed.setThumbnail(track.displayThumbnail());
               SongAddedEmbed.setColor("#000000");
               SongAddedEmbed.setDescription(`[${track.title}](${track.uri})`);
