@@ -38,9 +38,6 @@ module.exports = {
   Spotidis Version: v${require("../package.json").version}
   [✨ Support Server](https://discord.gg/shehdSk8s3) | [GitHub](https://github.com/syihabuddin) | By [Sh3hub1337](https://github.com/syihabuddin)
   `);
-  	image: {
-		url: 'https://cdn.discordapp.com/attachments/752712711556694057/865839960137007144/PicsArt_07-17-01.18.11.jpg',
-	},
     if (!args[0]) message.channel.send(Embed);
     else {
       let cmd =
