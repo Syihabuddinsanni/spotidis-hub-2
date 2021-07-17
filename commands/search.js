@@ -96,7 +96,9 @@ module.exports = {
           time: 30000,
         })
         .catch(() => {
+          ConfigMessage.delete(Config);
           er = true;
+          ConfigMessage.delete(Config);
           msg.edit(
             "**You took too long to respond. Run the command again if you want to play something!**"
           );  ConfigMessage.delete(Config);
