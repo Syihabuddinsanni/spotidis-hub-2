@@ -3,7 +3,7 @@ const { TrackUtils, Player } = require("erela.js");
 
 module.exports = {
   name: "skipto",
-  description: `Melompati musik yang sedang diputar berdasarkan input antrian`, //Skip to a song in the queue
+  description: `Melompati musik berdasarkan input antrian / queue`, //Skip to a song in the queue
   usage: "<number>",
   permissions: {
     channel: ["VIEW_CHANNEL", "SEND_MESSAGES", "EMBED_LINKS"],
@@ -25,8 +25,8 @@ module.exports = {
       selfDeafen: false,
     });
 
-    if (!player) return client.sendTime(message.channel, "❌ | **Nothing is playing right now...**");
-    if (!message.member.voice.channel) return client.sendTime(message.channel, "❌ | **You must be in a voice channel to use this command!**");
+    if (!player) return client.sendTime(message.channel, "❌ | **Tidak ada yang sedang diputar...**"); //Nothing is playing right now...
+    if (!message.member.voice.channel) return client.sendTime(message.channel, "❌ | **Masuk voice channel dulu cok**"); //You must be in a voice channel to use this command!
     if (message.guild.me.voice.channel && message.member.voice.channel.id !== message.guild.me.voice.channel.id) return client.sendTime(message.channel, ":x: | **You must be in the same voice channel as me to use this command!**");
 
     try {
@@ -67,7 +67,7 @@ module.exports = {
       const voiceChannel = member.voice.channel;
       let awaitchannel = client.channels.cache.get(interaction.channel_id); /// thanks Reyansh for this idea ;-;
       if (!member.voice.channel) return client.sendTime(interaction, "❌ | **You must be in a voice channel to use this command.**");
-      if (guild.me.voice.channel && !guild.me.voice.channel.equals(member.voice.channel)) return client.sendTime(interaction, `:x: | **You must be in the same voice channel as me to use this command!**`);
+      if (guild.me.voice.channel && !guild.me.voice.channel.equals(member.voice.channel)) return client.sendTime(interaction, `:x: | **Bot nya masi dipake njir**`); //You must be in the same voice channel as me to use this command!
       let CheckNode = client.Manager.nodes.get(client.config.Lavalink.id);
       if (!CheckNode || !CheckNode.connected) {
         return client.sendTime(interaction, "❌ | **Lavalink node not connected**");
