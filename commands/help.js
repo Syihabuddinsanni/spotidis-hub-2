@@ -60,7 +60,7 @@ module.exports = {
             cmd.name
           }${cmd.usage ? " " + cmd.usage : ""}\``,
           true
-        )
+        ).setImage('https://cdn.discordapp.com/attachments/752712711556694057/865839960137007144/PicsArt_07-17-01.18.11.jpg')
         .addField(
           "Permissions",
           "Member: " +
@@ -68,7 +68,7 @@ module.exports = {
             "\nBot: " +
             cmd.permissions.channel.join(", "),
           true
-          .setImage('https://cdn.discordapp.com/attachments/752712711556694057/865839960137007144/PicsArt_07-17-01.18.11.jpg')
+          
         )
         .setFooter(
           `Prefix - ${
@@ -148,7 +148,6 @@ SlashCommand: {
               "\nBot: " +
               cmd.permissions.channel.join(", "),
             true
-            .setImage('https://cdn.discordapp.com/attachments/752712711556694057/865839960137007144/PicsArt_07-17-01.18.11.jpg')
           )
           .setFooter(
             `Prefix - ${
