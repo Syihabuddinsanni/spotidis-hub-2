@@ -19,7 +19,7 @@ module.exports = {
   run: async (client, message, args, { GuildDB }) => {
     let Config = new MessageEmbed()
       .setAuthor("Server Config", client.config.IconURL)
-      .setColor("RANDOM")
+      .setColor("#FF0000")
       .addField("Prefix", GuildDB.prefix, true)
       .addField("DJ Role", GuildDB.DJ ? `<@&${GuildDB.DJ}>` : "Not Set", true)
       .setDescription(`
@@ -40,7 +40,7 @@ What would you like to edit?
     ).catch(() => {
       ConfigMessage.reactions.removeAll();
       client.sendTime(
-        message.channel, "❌ | **You took too long to respond. If you want to edit the settings, run the command again!**"
+        message.channel, "❌ | **Waktu habis. Jalankan command ulang!**"
       );
       ConfigMessage.delete(Config);
     });
@@ -55,13 +55,13 @@ What would you like to edit?
     let em = emoji;
     ConfigMessage.reactions.removeAll();
     if (em._emoji.name === "1️⃣") {
-      await client.sendTime(message.channel, "What do you want to change the prefix to?");
+      await client.sendTime(message.channel, "Mau ganti prefix apa sobad ?");
       let prefix = await message.channel.awaitMessages(
         (msg) => msg.author.id === message.author.id,
         { max: 1, time: 30000, errors: ["time"] }
       );
       if (!prefix.first())
-        return client.sendTime(message.channel, "You took too long to respond.");
+        return client.sendTime(message.channel, "Respon terlalu lama.");
       prefix = prefix.first();
       prefix = prefix.content;
 
@@ -71,7 +71,7 @@ What would you like to edit?
       });
 
       client.sendTime(
-        message.channel, `Successfully saved guild prefix as \`${prefix}\``
+        message.channel, `Berhasil mentimpan prefix baru  \`${prefix}\``
       );
     } else {
       await client.sendTime(
@@ -82,7 +82,7 @@ What would you like to edit?
         { max: 1, time: 30000, errors: ["time"] }
       );
       if (!role.first())
-        return client.sendTime(message.channel, "You took too long to respond.");
+        return client.sendTime(message.channel, "Respon terlalu lama.");
       role = role.first();
       if (!role.mentions.roles.first())
         return client.sendTime(
