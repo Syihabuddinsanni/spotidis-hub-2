@@ -73,7 +73,7 @@ module.exports = {
 
         let em = new MessageEmbed()
           .setAuthor("Hasil pencarian dari  " + SearchString, client.config.IconURL)
-          .setColor("RANDOM")
+          .setColor("#000000")
           .setDescription(MappedSongs.join("\n"));
         return em;
       });
@@ -115,7 +115,7 @@ module.exports = {
       let SongAddedEmbed = new MessageEmbed();
       SongAddedEmbed.setAuthor(`Added to queue`, client.config.IconURL);
       SongAddedEmbed.setThumbnail(Song.displayThumbnail());
-      SongAddedEmbed.setColor("RANDOM");
+      SongAddedEmbed.setColor("#000000");
       SongAddedEmbed.setDescription(`[${Song.title}](${Song.uri})`);
       SongAddedEmbed.addField("Author", `${Song.author}`, true);
       SongAddedEmbed.addField(
@@ -283,7 +283,7 @@ module.exports = {
               .setDescription(
                 `${results}\n\n\t**Type the number of the song you want to play!**\n`
               )
-              .setColor("RANDOM")
+              .setColor("#000000")
               .setAuthor(`Search results for ${search}`, client.config.IconURL);
             interaction.send(resultss);
             try {
@@ -320,7 +320,7 @@ module.exports = {
               let SongAddedEmbed = new MessageEmbed();
               SongAddedEmbed.setAuthor(`Added to queue`, client.config.IconURL);
               SongAddedEmbed.setThumbnail(track.displayThumbnail());
-              SongAddedEmbed.setColor("RANDOM");
+              SongAddedEmbed.setColor("#000000");
               SongAddedEmbed.setDescription(`[${track.title}](${track.uri})`);
               SongAddedEmbed.addField("Author", track.author, true);
               SongAddedEmbed.addField(
