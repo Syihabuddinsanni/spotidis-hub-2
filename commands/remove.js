@@ -21,14 +21,14 @@ const { TrackUtils } = require("erela.js");
   run: async (client, message, args, { GuildDB }) => {
     let player = await client.Manager.players.get(message.guild.id);
     const song = player.queue.slice(args[0] - 1, 1); 
-    if (!player) return client.sendTime(message.channel, "❌ | **Nothing is playing right now...**");
+    if (!player) return client.sendTime(message.channel, "❌ | **Tidak ada yang sedang diputar. . .**");
     if (!message.member.voice.channel) return client.sendTime(message.channel, "❌ | **You must be in a voice channel to use this command!**");
-    if (message.guild.me.voice.channel && message.member.voice.channel.id !== message.guild.me.voice.channel.id) return client.sendTime(message.channel, ":x: | **You must be in the same voice channel as me to use this command!**");
+    if (message.guild.me.voice.channel && message.member.voice.channel.id !== message.guild.me.voice.channel.id) return client.sendTime(message.channel, ":x: | **Bot nya lagi di pake cuk!**");
         
     if (!player.queue || !player.queue.length || player.queue.length === 0)
       return message.channel.send("There is nothing in the queue to remove");
     let rm = new MessageEmbed()
-      .setDescription(`✅ **|** Removed track **\`${Number(args[0])}\`** from the queue!`)
+      .setDescription(`✅ **|** Berhasil menghapus antrian nomor  **\`${Number(args[0])}\`** dalam antrian!`)
       .setColor("GREEN")
       if (isNaN(args[0]))rm.setDescription(`**Usage - **${client.config.prefix}\`remove [track]\``);
       if (args[0] > player.queue.length)
@@ -59,14 +59,14 @@ const { TrackUtils } = require("erela.js");
       const guild = client.guilds.cache.get(interaction.guild_id);
       const member = guild.members.cache.get(interaction.member.user.id);
       const song = player.queue.slice(args[0] - 1, 1);
-      if (!player) return client.sendTime(interaction, "❌ | **Nothing is playing right now...**");
-      if (!member.voice.channel) return client.sendTime(interaction, "❌ | **You must be in a voice channel to use this command.**");
-      if (guild.me.voice.channel && !guild.me.voice.channel.equals(member.voice.channel)) return client.sendTime(interaction, ":x: | **You must be in the same voice channel as me to use this command!**");
+      if (!player) return client.sendTime(interaction, "❌ | **Tidak ada yang sedang diputar. . .**");
+      if (!member.voice.channel) return client.sendTime(interaction, "❌ | **Masuk voice channel dulu sobad!**");
+      if (guild.me.voice.channel && !guild.me.voice.channel.equals(member.voice.channel)) return client.sendTime(interaction, ":x: | **Bot nya lagi di pake cuk!**");
   
       if (!player.queue || !player.queue.length || player.queue.length === 0)
-      return client.sendTime("❌ | **Nothing is playing right now...**");
+      return client.sendTime("❌ | **Tidak ada yang sedang diputar. . .**");
       let rm = new MessageEmbed()
-        .setDescription(`✅ | **Removed track** \`${Number(args[0])}\` from the queue!`)
+        .setDescription(`✅ | **Berhasil menghapus antrian nomor ** \`${Number(args[0])}\` dalam antrian!`)
         .setColor("GREEN")
       if (isNaN(args[0])) rm.setDescription(`**Usage:** \`${GuildDB.prefix}remove [track]\``);
       if (args[0] > player.queue.length)
