@@ -118,7 +118,8 @@ SlashCommand: {
             ).setDescription(`${Commands.join("\n")}
   
   Discord Music Bot Version: v${require("../package.json").version}
-  [✨ Support Server]() | [GitHub](jajajajan) | By [jajajaja)`);
+  [✨ Support Server](https://discord.gg/shehdSk8s3) | 
+  [GitHub](https://github.com/syihabuddin) | By [Sh3hub1337](https://github.com/syihabuddin)`);
       if (!args) return interaction.send(Embed);
       else {
         let cmd =
