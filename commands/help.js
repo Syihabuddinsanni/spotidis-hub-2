@@ -33,7 +33,7 @@ module.exports = {
             .setFooter(
               `To get info of each command type ${
                 GuildDB ? GuildDB.prefix : client.config.DefaultPrefix
-              }help [Command] | Have a nice kontol cok!`
+              }help [Command] | Have a nice Day Brader!`
             ).setDescription(`${Commands.join("\n")}
   
   Spotidis Version: v${require("../package.json").version}
