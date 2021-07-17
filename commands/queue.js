@@ -71,7 +71,7 @@ module.exports = {
       ).join("");
 
       let Embed = new MessageEmbed()
-        .setAuthor("Queue", client.config.IconURL)
+        .setAuthor("Daftar antrian :", client.config.IconURL)
         .setColor("RANDOM")
         .setDescription(
           `**Sedang Memutar:** \n[${player.queue.current.title}](${player.queue.current.uri}) \n\n**Up Next:** \n${SongsDescription}\n\n`
@@ -176,7 +176,7 @@ module.exports = {
         ).join("\n");
 
         let Embed = new MessageEmbed()
-          .setAuthor("Queue", client.config.IconURL)
+          .setAuthor("Daftar antrian :", client.config.IconURL)
           .setColor("RANDOM")
           .setDescription(
             `**Sedang Memutar:** \n[${player.queue.current.title}](${player.queue.current.uri}) \n\n**Up Next:** \n${SongsDescription}\n\n`
