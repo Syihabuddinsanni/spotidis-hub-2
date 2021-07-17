@@ -96,9 +96,9 @@ module.exports = {
           time: 30000,
         })
         .catch(() => {
-          er = true;
-          msg.edit(
-            "**You took too long to respond. Run the command again if you want to play something!**"
+          ConfigMessage.reactions.removeAll();
+          client.sendTime(
+            message.channel, "❌ | **You took too long to respond. If you want to edit the settings, run the command again!**"
           );
         });
       if (er) return;
