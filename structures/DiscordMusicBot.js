@@ -149,18 +149,18 @@ class DiscordMusicBot extends Client {
       .on("trackStart", async (player, track) => {
         this.SongsPlayed++;
         let TrackStartedEmbed = new MessageEmbed()
-          .setAuthor(`Now playing ♪`, this.config.IconURL)
+          .setAuthor(`Sekarang Memutar ♪`, this.config.IconURL)
           .setThumbnail(player.queue.current.displayThumbnail())
           .setDescription(`[${track.title}](${track.uri})`)
           .addField("Requested by", `${track.requester}`, true)
           .addField(
-            "Duration",
+            "Durasi",
             `\`${prettyMilliseconds(track.duration, {
               colonNotation: true,
             })}\``,
             true
           )
-          .setColor("RANDOM");
+          .setColor("#00FF00");
         //.setFooter("Started playing at");
         let NowPlaying = await client.channels.cache
           .get(player.textChannel)
@@ -169,8 +169,8 @@ class DiscordMusicBot extends Client {
       })
       .on("queueEnd", (player) => {
         let QueueEmbed = new MessageEmbed()
-          .setAuthor("The queue has ended", this.config.IconURL)
-          .setColor("RANDOM")
+          .setAuthor("Antrian Berakhir", this.config.IconURL)
+          .setColor("#FF0000")
           .setTimestamp();
         client.channels.cache.get(player.textChannel).send(QueueEmbed);
         if (!this.config["24/7"]) player.destroy();
