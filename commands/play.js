@@ -52,14 +52,14 @@ module.exports = {
                     for (let i = 0; i < Searched.tracks.length; i++) songs.push(TrackUtils.build(Searched.tracks[i], message.author));
                     player.queue.add(songs);
                     if (!player.playing && !player.paused && player.queue.totalSize === Searched.tracks.length) player.play();
-                    SongAddedEmbed.setAuthor(`Playlist **DITAMBAHKAN KE ANTRIAN**`, message.author.displayAvatarURL());
+                    SongAddedEmbed.setAuthor(`Playlist DITAMBAHKAN KE ANTRIAN`, message.author.displayAvatarURL());
                     SongAddedEmbed.addField("Enqueued", `\`${Searched.tracks.length}\` songs`, false);
                     //SongAddedEmbed.addField("Playlist duration", `\`${prettyMilliseconds(Searched.tracks, { colonNotation: true })}\``, false)
                     Searching.edit(SongAddedEmbed);
                 } else if (Searched.loadType.startsWith("TRACK")) {
                     player.queue.add(TrackUtils.build(Searched.tracks[0], message.author));
                     if (!player.playing && !player.paused && !player.queue.size) player.play();
-                    SongAddedEmbed.setAuthor(`**DITAMBAHKAN KE ANTRIAN**`, client.config.IconURL);
+                    SongAddedEmbed.setAuthor(`DITAMBAHKAN KE ANTRIAN`, client.config.IconURL);
                     SongAddedEmbed.setDescription(`[${Searched.tracks[0].info.title}](${Searched.tracks[0].info.uri})`);
                     SongAddedEmbed.addField("Author", Searched.tracks[0].info.author, true);
                     //SongAddedEmbed.addField("Duration", `\`${prettyMilliseconds(Searched.tracks[0].length, { colonNotation: true })}\``, true);
@@ -76,7 +76,7 @@ module.exports = {
                 else if (Searched.loadType == "PLAYLIST_LOADED") {
                     player.queue.add(Searched.tracks);
                     if (!player.playing && !player.paused && player.queue.totalSize === Searched.tracks.length) player.play();
-                    SongAddedEmbed.setAuthor(`Playlist **DITAMBAHKAN KE ANTRIAN**`, client.config.IconURL);
+                    SongAddedEmbed.setAuthor(`Playlist DITAMBAHKAN KE ANTRIAN`, client.config.IconURL);
                     SongAddedEmbed.setThumbnail(Searched.tracks[0].displayThumbnail());
                     SongAddedEmbed.setDescription(`[${Searched.playlist.name}](${SearchString})`);
                     SongAddedEmbed.addField("Enqueued", `\`${Searched.tracks.length}\` songs`, false);
@@ -85,7 +85,7 @@ module.exports = {
                 } else {
                     player.queue.add(Searched.tracks[0]);
                     if (!player.playing && !player.paused && !player.queue.size) player.play();
-                    SongAddedEmbed.setAuthor(`**DITAMBAHKAN KE ANTRIAN**`, client.config.IconURL);
+                    SongAddedEmbed.setAuthor(`DITAMBAHKAN KE ANTRIAN`, client.config.IconURL);
 
                     SongAddedEmbed.setThumbnail(Searched.tracks[0].displayThumbnail());
                     SongAddedEmbed.setDescription(`[${Searched.tracks[0].title}](${Searched.tracks[0].uri})`);
@@ -157,7 +157,7 @@ module.exports = {
                         player.queue.add(TrackUtils.build(Searched.tracks[0], member.user));
                         if (!player.playing && !player.paused && !player.queue.length) player.play();
                         let SongAddedEmbed = new MessageEmbed();
-                            SongAddedEmbed.setAuthor(`**DITAMBAHKAN KE ANTRIAN**`, client.config.IconURL);
+                            SongAddedEmbed.setAuthor(`DITAMBAHKAN KE ANTRIAN`, client.config.IconURL);
                             SongAddedEmbed.setColor("#000000");
                             SongAddedEmbed.setDescription(`[${Searched.tracks[0].info.title}](${Searched.tracks[0].info.uri})`);
                             SongAddedEmbed.addField("Author", Searched.tracks[0].info.author, true);
@@ -168,7 +168,7 @@ module.exports = {
                         player.queue.add(TrackUtils.build(Searched.tracks[0], member.user));
                         if (!player.playing && !player.paused && !player.queue.length) player.play();
                         let SongAdded = new MessageEmbed();
-                            SongAdded.setAuthor(`**DITAMBAHKAN KE ANTRIAN**`, client.config.IconURL);
+                            SongAdded.setAuthor(`DITAMBAHKAN KE ANTRIAN`, client.config.IconURL);
                             SongAdded.setColor("#000000");
                             SongAdded.setDescription(`[${Searched.tracks[0].info.title}](${Searched.tracks[0].info.uri})`);
                             SongAdded.addField("Author", Searched.tracks[0].info.author, true);
@@ -182,7 +182,7 @@ module.exports = {
                         player.queue.add(songs);
                         if (!player.playing && !player.paused && player.queue.totalSize === Searched.tracks.length) player.play();
                         let Playlist = new MessageEmbed();
-                        Playlist.setAuthor(`Playlist **DITAMBAHKAN KE ANTRIAN**`, client.config.IconURL);
+                        Playlist.setAuthor(`Playlist DITAMBAHKAN KE ANTRIAN`, client.config.IconURL);
                         Playlist.setDescription(`[${Searched.playlistInfo.name}](${interaction.data.options[0].value})`);
                         Playlist.addField("Enqueued", `\`${Searched.tracks.length}\` songs`, false);
                         return interaction.send(Playlist);
@@ -205,7 +205,7 @@ module.exports = {
                         player.queue.add(res.tracks[0]);
                         if (!player.playing && !player.paused && !player.queue.length) player.play();
                         let SongAddedEmbed = new MessageEmbed();
-                            SongAddedEmbed.setAuthor(`**DITAMBAHKAN KE ANTRIAN**`, client.config.IconURL);
+                            SongAddedEmbed.setAuthor(`DITAMBAHKAN KE ANTRIAN`, client.config.IconURL);
                             SongAddedEmbed.setThumbnail(res.tracks[0].displayThumbnail());
                             SongAddedEmbed.setColor("RANDOM");
                             SongAddedEmbed.setDescription(`[${res.tracks[0].title}](${res.tracks[0].uri})`);
@@ -218,7 +218,7 @@ module.exports = {
                         player.queue.add(res.tracks);
                         await player.play();
                         let SongAdded = new MessageEmbed();
-                        SongAdded.setAuthor(`Playlist **DITAMBAHKAN KE ANTRIAN**`, client.config.IconURL);
+                        SongAdded.setAuthor(`Playlist DITAMBAHKAN KE ANTRIAN`, client.config.IconURL);
                         SongAdded.setThumbnail(res.tracks[0].displayThumbnail());
                         SongAdded.setDescription(`[${res.playlist.name}](${interaction.data.options[0].value})`);
                         SongAdded.addField("Enqueued", `\`${res.tracks.length}\` songs`, false);
@@ -231,7 +231,7 @@ module.exports = {
 
                         if (!player.playing && !player.paused && !player.queue.length) {
                             let SongAddedEmbed = new MessageEmbed();
-                            SongAddedEmbed.setAuthor(`**DITAMBAHKAN KE ANTRIAN**`, client.config.IconURL);
+                            SongAddedEmbed.setAuthor(`DITAMBAHKAN KE ANTRIAN`, client.config.IconURL);
                             SongAddedEmbed.setThumbnail(track.displayThumbnail());
                             SongAddedEmbed.setColor("#000000");
                             SongAddedEmbed.setDescription(`[${track.title}](${track.uri})`);
@@ -243,7 +243,7 @@ module.exports = {
                             
                         } else {
                             let SongAddedEmbed = new MessageEmbed();
-                            SongAddedEmbed.setAuthor(`**DITAMBAHKAN KE ANTRIAN**`, client.config.IconURL);
+                            SongAddedEmbed.setAuthor(`DITAMBAHKAN KE ANTRIAN`, client.config.IconURL);
                             SongAddedEmbed.setThumbnail(track.displayThumbnail());
                             SongAddedEmbed.setColor("#000000");
                             SongAddedEmbed.setDescription(`[${track.title}](${track.uri})`);
