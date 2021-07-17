@@ -96,21 +96,19 @@ module.exports = {
           time: 30000,
         })
         .catch(() => {
-          ConfigMessage.delete(Config);
           er = true;
-          ConfigMessage.delete(Config);
           msg.edit(
-            "**You took too long to respond. Run the command again if you want to play something!**"
-          );  ConfigMessage.delete(Config);
+            "**Respond lu kelamaan cuk. Ulangi lagi command nya ye !**" //You took too long to respond. Run the command again if you want to play something!
+          );
         });
       if (er) return;
       /**@type {Message} */
       let SongIDmsg = SongID.first();
 
       if (!parseInt(SongIDmsg.content))
-        return client.sendTime(message.channel, "Please send correct song ID number");
+        return client.sendTime(message.channel, "Plis masukin ID yang bener"); //Please send correct song ID number
       let Song = Searched.tracks[parseInt(SongIDmsg.content) - 1];
-      if (!Song) return client.sendTime(message.channel, "No song found for the given ID");
+      if (!Song) return client.sendTime(message.channel, "ID tidak ditemukan"); //No song found for the given ID
       player.queue.add(Song);
       if (!player.playing && !player.paused && !player.queue.size)
         player.play();
@@ -144,7 +142,7 @@ module.exports = {
         value: "song",
         type: 3,
         required: true,
-        description: "Enter the song name or url you want to search",
+        description: "Masukan nama musik / url", //Enter the song name or url you want to search
       },
     ],
     /**
@@ -162,7 +160,7 @@ module.exports = {
       if (!member.voice.channel)
         return client.sendTime(
           interaction,
-          "❌ | **You must be in a voice channel to use this command.**"
+          "❌ | **Bot nya lagi dipake anying !.**" //You must be in the same voice channel as me to use this command!
         );
       if (
         guild.me.voice.channel &&
@@ -170,7 +168,7 @@ module.exports = {
       )
         return client.sendTime(
           interaction,
-          ":x: | **You must be in the same voice channel as me to use this command!**"
+          ":x: | **Bot nya lagi dipake anying!!!**" //You must be in the same voice channel as me to use this command!
         );
       let CheckNode = client.Manager.nodes.get(client.config.Lavalink.id);
       if (!CheckNode || !CheckNode.connected) {
@@ -197,17 +195,17 @@ module.exports = {
         switch (Searched.loadType) {
           case "LOAD_FAILED":
             if (!player.queue.current) player.destroy();
-            return client.sendError(interaction, `:x: | **There was an error while searching**`);
+            return client.sendError(interaction, `:x: | **Terjadi error saat searching**`); //there is an error while searching
 
           case "NO_MATCHES":
             if (!player.queue.current) player.destroy();
-            return client.sendTime(interaction, ":x: | **No results were found**");
+            return client.sendTime(interaction, ":x: | **Hasil tidak ditemukan**"); //No results were found
           case "TRACK_LOADED":
             player.queue.add(TrackUtils.build(Searched.tracks[0], member.user));
             if (!player.playing && !player.paused && !player.queue.length)
               player.play();
             return client.sendTime(
-              interaction, `**Added to queue:** \`[${Searched.tracks[0].info.title}](${Searched.tracks[0].info.uri}}\`.`
+              interaction, `**Ditambahkan ke antrian : ** \`[${Searched.tracks[0].info.title}](${Searched.tracks[0].info.uri}}\`.` //Added to queue:
             );
 
           case "PLAYLIST_LOADED":
@@ -223,7 +221,7 @@ module.exports = {
             )
               player.play();
             return client.sendTime(
-              interaction, `**Playlist added to queue**: \n**${Searched.playlist.name}** \nEnqueued: **${Searched.playlistInfo.length} songs**`
+              interaction, `**Playlist ditambahkan ke antrian**: \n**${Searched.playlist.name}** \nEnqueued: **${Searched.playlistInfo.length} songs**`//Playlist added to queue
             );
         }
       } else {
