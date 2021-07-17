@@ -36,10 +36,8 @@ module.exports = {
               }help [Command] | Have a nice kontol cok!`
             ).setDescription(`${Commands.join("\n")}
   
-  Discord Music Bot Version: v${require("../package.json").version}
-  [✨  ](${
-    client.config.SupportServer
-  }) |`);
+  Discord Music Bot matamu${require("../package.json").version}
+  [✨ ghhhhsad ] sdadsad |`);
     if (!args[0]) message.channel.send(Embed);
     else {
       let cmd =
@@ -119,7 +117,7 @@ SlashCommand: {
   
   Discord Music Bot Version: v${require("../package.json").version}
   ✨test | 
-  [GitHub](https://github.com/syihabuddin) | By [Sh3hub1337](https://github.com/syihabuddin)`);
+  [Test 1](https://test.cc) | By [Test 2](https://Test2.xyz)`);
       if (!args) return interaction.send(Embed);
       else {
         let cmd =
