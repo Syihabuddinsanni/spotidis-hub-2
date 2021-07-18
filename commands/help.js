@@ -2,7 +2,7 @@ const { MessageEmbed } = require("discord.js");
 
 module.exports = {
   name: "help",
-  description: "Informasi tentang bot", //Information about the bot
+  description: "Informasi tentang command bot", //Information about the bot
   usage: "[command]",
   permissions: {
     channel: ["VIEW_CHANNEL", "SEND_MESSAGES", "EMBED_LINKS"],
@@ -60,7 +60,7 @@ module.exports = {
           `\`${GuildDB ? GuildDB.prefix : client.config.DefaultPrefix}${
             cmd.name
           }${cmd.usage ? " " + cmd.usage : ""}\``,
-          true
+          true, client.config.Image
         )
         .addField(
           "Permissions",
@@ -142,9 +142,9 @@ SlashCommand: {
             `\`${GuildDB ? GuildDB.prefix : client.config.DefaultPrefix}${
               cmd.name
             }\`${cmd.usage ? " " + cmd.usage : ""}`,
-            true
+            true,client.config.Image
           )
-          .setImage(client.config.Image)
+         
           .addField(
             "Permissions",
             "Member: " +

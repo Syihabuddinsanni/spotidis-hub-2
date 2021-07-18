@@ -53,7 +53,7 @@ module.exports = {
                     player.queue.add(songs);
                     if (!player.playing && !player.paused && player.queue.totalSize === Searched.tracks.length) player.play();
                     SongAddedEmbed.setAuthor(`Playlist Ditambahkan Ke Antrian`, message.author.displayAvatarURL());
-                    SongAddedEmbed.addField("Enqueued", `\`${Searched.tracks.length}\` songs`, false);
+                    SongAddedEmbed.addField("Antrian", `\`${Searched.tracks.length}\` Musik`, false);
                     //SongAddedEmbed.addField("Durasi Playlist", `\`${prettyMilliseconds(Searched.tracks, { colonNotation: true })}\``, false)
                     Searching.edit(SongAddedEmbed);
                 } else if (Searched.loadType.startsWith("TRACK")) {
@@ -79,7 +79,7 @@ module.exports = {
                     SongAddedEmbed.setAuthor(`Playlist Ditambahkan Ke Antrian`, client.config.IconURL);
                     SongAddedEmbed.setThumbnail(Searched.tracks[0].displayThumbnail());
                     SongAddedEmbed.setDescription(`[${Searched.playlist.name}](${SearchString})`);
-                    SongAddedEmbed.addField("Enqueued", `\`${Searched.tracks.length}\` songs`, false);
+                    SongAddedEmbed.addField("Antrian", `\`${Searched.tracks.length}\` musik`, false);
                     SongAddedEmbed.addField("Durasi Playlist", `\`${prettyMilliseconds(Searched.playlist.duration, { colonNotation: true })}\``, false);
                     Searching.edit(SongAddedEmbed);
                 } else {
@@ -184,7 +184,7 @@ module.exports = {
                         let Playlist = new MessageEmbed();
                         Playlist.setAuthor(`Playlist Ditambahkan Ke Antrian`, client.config.IconURL);
                         Playlist.setDescription(`[${Searched.playlistInfo.name}](${interaction.data.options[0].value})`);
-                        Playlist.addField("Enqueued", `\`${Searched.tracks.length}\` songs`, false);
+                        Playlist.addField("Antrian", `\`${Searched.tracks.length}\` musik`, false);
                         return interaction.send(Playlist);
                 }
             } else {
@@ -221,7 +221,7 @@ module.exports = {
                         SongAdded.setAuthor(`Playlist Ditambahkan Ke Antrian`, client.config.IconURL);
                         SongAdded.setThumbnail(res.tracks[0].displayThumbnail());
                         SongAdded.setDescription(`[${res.playlist.name}](${interaction.data.options[0].value})`);
-                        SongAdded.addField("Enqueued", `\`${res.tracks.length}\` songs`, false);
+                        SongAdded.addField("Antrian", `\`${res.tracks.length}\` musik`, false);
                         SongAdded.addField("Playlist durasi", `\`${prettyMilliseconds(res.playlist.duration, { colonNotation: true })}\``, false);
                         return interaction.send(SongAdded);
                     case "SEARCH_RESULT":
