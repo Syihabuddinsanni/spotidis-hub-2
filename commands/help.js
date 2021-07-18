@@ -19,7 +19,7 @@ module.exports = {
    run: async (client, message, args, { GuildDB }) => {
     let Commands = client.commands.map(
       (cmd) =>
-        `[\`${GuildDB ? GuildDB.prefix : client.config.DefaultPrefix}${
+        `> [\`${GuildDB ? GuildDB.prefix : client.config.DefaultPrefix}${
           cmd.name
         }${cmd.usage ? " " + cmd.usage : ""}\`](https://spotidis-hub.herokuapp.com/#commands) - ${cmd.description}` // EDIT BESOK
     );
@@ -102,7 +102,7 @@ SlashCommand: {
     run: async (client, interaction, args, { GuildDB }) => {
       let Commands = client.commands.map(
         (cmd) =>
-          `[\`${GuildDB ? GuildDB.prefix : client.config.DefaultPrefix}${
+          `> [\`${GuildDB ? GuildDB.prefix : client.config.DefaultPrefix}${
             cmd.name
           }${cmd.usage ? " " + cmd.usage : ""}\`](https://spotidis-hub.herokuapp.com/#commands) - ${cmd.description}`
       );
