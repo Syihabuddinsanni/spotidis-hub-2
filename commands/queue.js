@@ -23,7 +23,7 @@ module.exports = {
     if (!player)
       return client.sendTime(
         message.channel,
-        "❌ | **Nothing is playing right now...**"
+        "<a:warn:866161245232693291> | **Tidak ada yang sedang diputar. . . **"
       );
 
     if (!player.queue || !player.queue.length || player.queue === 0) {
@@ -67,7 +67,7 @@ module.exports = {
             {
               colonNotation: true,
             }
-          )}\` **|** ${t.requester}\n`
+          )}\` ` //\` **|** ${t.requester}\n`
       ).join("");
 
       let Embed = new MessageEmbed()
@@ -130,7 +130,7 @@ module.exports = {
     run: async (client, interaction, args, { GuildDB }) => {
       let player = await client.Manager.get(interaction.guild_id);
       if (!player)
-        return client.sendTime(interaction, "❌ | **Nothing is playing right now...**");
+        return client.sendTime(interaction, "<a:warn:866161245232693291> | **Tidak ada yang sedang diputar. . . **");
 
       if (!player.queue || !player.queue.length || player.queue === 0) {
         let QueueEmbed = new MessageEmbed()

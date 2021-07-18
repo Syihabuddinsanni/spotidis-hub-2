@@ -21,8 +21,8 @@ const { TrackUtils } = require("erela.js");
   run: async (client, message, args, { GuildDB }) => {
     let player = await client.Manager.players.get(message.guild.id);
     const song = player.queue.slice(args[0] - 1, 1); 
-    if (!player) return client.sendTime(message.channel, "❌ | **Tidak ada yang sedang diputar. . .**");
-    if (!message.member.voice.channel) return client.sendTime(message.channel, "❌ | **You must be in a voice channel to use this command!**");
+    if (!player) return client.sendTime(message.channel, "<a:warn:866161245232693291> | **Tidak ada yang sedang diputar. . .**");
+    if (!message.member.voice.channel) return client.sendTime(message.channel, "<a:warn:866161245232693291> | **Masuk voice channel dulu sobad!**");
     if (message.guild.me.voice.channel && message.member.voice.channel.id !== message.guild.me.voice.channel.id) return client.sendTime(message.channel, ":x: | **Bot nya lagi di pake cuk!**");
         
     if (!player.queue || !player.queue.length || player.queue.length === 0)
@@ -59,12 +59,12 @@ const { TrackUtils } = require("erela.js");
       const guild = client.guilds.cache.get(interaction.guild_id);
       const member = guild.members.cache.get(interaction.member.user.id);
       const song = player.queue.slice(args[0] - 1, 1);
-      if (!player) return client.sendTime(interaction, "❌ | **Tidak ada yang sedang diputar. . .**");
-      if (!member.voice.channel) return client.sendTime(interaction, "❌ | **Masuk voice channel dulu sobad!**");
+      if (!player) return client.sendTime(interaction, "<a:warn:866161245232693291> | **Tidak ada yang sedang diputar. . .**");
+      if (!member.voice.channel) return client.sendTime(interaction, "<a:warn:866161245232693291> | **Masuk voice channel dulu sobad!**");
       if (guild.me.voice.channel && !guild.me.voice.channel.equals(member.voice.channel)) return client.sendTime(interaction, ":x: | **Bot nya lagi di pake cuk!**");
   
       if (!player.queue || !player.queue.length || player.queue.length === 0)
-      return client.sendTime("❌ | **Tidak ada yang sedang diputar. . .**");
+      return client.sendTime("<a:warn:866161245232693291> | **Tidak ada yang sedang diputar. . .**");
       let rm = new MessageEmbed()
         .setDescription(`✅ | **Berhasil menghapus nomor ** \`${Number(args[0])}\` dalam antrian!`)
         .setColor("GREEN")
