@@ -71,7 +71,7 @@ What would you like to edit?
       });
 
       client.sendTime(
-        message.channel, `Berhasil mentimpan prefix baru  \`${prefix}\``
+        message.channel, `Berhasil memperbarui prefix  \`${prefix}\``
       );
     } else {
       await client.sendTime(
