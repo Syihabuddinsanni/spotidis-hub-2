@@ -52,6 +52,7 @@ module.exports = {
         .setAuthor(`Command: ${cmd.name}`, client.config.IconURL)
         .setDescription(cmd.description)
         .setColor("GREEN")
+        .setImage('https://cdn.discordapp.com/attachments/752712711556694057/865839960137007144/PicsArt_07-17-01.18.11.jpg')
         //.addField("Name", cmd.name, true)
         .addField("Aliases", `\`${cmd.aliases.join(", ")}\``, true)
         .addField(
@@ -59,8 +60,9 @@ module.exports = {
           `\`${GuildDB ? GuildDB.prefix : client.config.DefaultPrefix}${
             cmd.name
           }${cmd.usage ? " " + cmd.usage : ""}\``,
-          true
-        ).setImage('https://cdn.discordapp.com/attachments/752712711556694057/865839960137007144/PicsArt_07-17-01.18.11.jpg')
+          true )
+         
+          .setImage('https://cdn.discordapp.com/attachments/752712711556694057/865839960137007144/PicsArt_07-17-01.18.11.jpg')
         .addField(
           "Permissions",
           "Member: " +
@@ -133,6 +135,7 @@ SlashCommand: {
           .setAuthor(`Command: ${cmd.name}`, client.config.IconURL)
           .setDescription(cmd.description)
           .setColor("GREEN")
+          .setImage('https://cdn.discordapp.com/attachments/752712711556694057/865839960137007144/PicsArt_07-17-01.18.11.jpg')
           //.addField("Name", cmd.name, true)
           .addField("Aliases", cmd.aliases.join(", "), true)
           .addField(
@@ -141,8 +144,9 @@ SlashCommand: {
               cmd.name
             }\`${cmd.usage ? " " + cmd.usage : ""}`,
             true
-          )
-          .setImage('https://cdn.discordapp.com/attachments/752712711556694057/865839960137007144/PicsArt_07-17-01.18.11.jpg')
+           
+             )
+             .setImage('https://cdn.discordapp.com/attachments/752712711556694057/865839960137007144/PicsArt_07-17-01.18.11.jpg')
           .addField(
             "Permissions",
             "Member: " +
