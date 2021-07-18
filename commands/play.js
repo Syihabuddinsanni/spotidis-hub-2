@@ -24,7 +24,7 @@ module.exports = {
         let SearchString = args.join(" ");
         if (!SearchString) return client.sendTime(message.channel, `**Usage - **\`${GuildDB.prefix}play [song]\``);
         let CheckNode = client.Manager.nodes.get(client.config.Lavalink.id);
-        let Searching = await message.channel.send(":mag_right: Searching...");
+    
         if (!CheckNode || !CheckNode.connected) {
        return client.sendTime(message.channel,"<a:warn:866161245232693291> | **Lavalink node not connected**");
         }
@@ -54,7 +54,7 @@ module.exports = {
                     if (!player.playing && !player.paused && player.queue.totalSize === Searched.tracks.length) player.play();
                     SongAddedEmbed.setAuthor(`Playlist Ditambahkan Ke Antrian`, message.author.displayAvatarURL());
                     SongAddedEmbed.addField("Enqueued", `\`${Searched.tracks.length}\` songs`, false);
-                    //SongAddedEmbed.addField("Playlist duration", `\`${prettyMilliseconds(Searched.tracks, { colonNotation: true })}\``, false)
+                    //SongAddedEmbed.addField("Durasi Playlist", `\`${prettyMilliseconds(Searched.tracks, { colonNotation: true })}\``, false)
                     Searching.edit(SongAddedEmbed);
                 } else if (Searched.loadType.startsWith("TRACK")) {
                     player.queue.add(TrackUtils.build(Searched.tracks[0], message.author));
@@ -80,7 +80,7 @@ module.exports = {
                     SongAddedEmbed.setThumbnail(Searched.tracks[0].displayThumbnail());
                     SongAddedEmbed.setDescription(`[${Searched.playlist.name}](${SearchString})`);
                     SongAddedEmbed.addField("Enqueued", `\`${Searched.tracks.length}\` songs`, false);
-                    SongAddedEmbed.addField("Playlist duration", `\`${prettyMilliseconds(Searched.playlist.duration, { colonNotation: true })}\``, false);
+                    SongAddedEmbed.addField("Durasi Playlist", `\`${prettyMilliseconds(Searched.playlist.duration, { colonNotation: true })}\``, false);
                     Searching.edit(SongAddedEmbed);
                 } else {
                     player.queue.add(Searched.tracks[0]);
