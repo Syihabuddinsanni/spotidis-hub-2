@@ -48,7 +48,7 @@ module.exports = {
             if (!player) return client.sendTime(interaction, "<a:warn:866161245232693291> Gak ada musik yang sedang diputar.");
             if (player.paused) return client.sendTime(interaction, "Music sudah Di hentikan!");
             player.pause(true);
-            client.sendTime(interaction, "**⏸ Di pause!**");
+            client.sendTime(interaction, "**⏸ Paused!**");
         },
     },
 };

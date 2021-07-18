@@ -67,7 +67,7 @@ module.exports = {
             {
               colonNotation: true,
             }
-          )}\` ` //\` **|** ${t.requester}\n`
+          )}\`\n` //\` **|** ${t.requester}\n`
       ).join("");
 
       let Embed = new MessageEmbed()
