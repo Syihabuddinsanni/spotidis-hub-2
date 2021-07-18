@@ -21,9 +21,9 @@ module.exports = {
   //Lavalink
    Lavalink: {
     id: "Main",
-    host: "lava.link",
-    port: 80,
-    pass: "youshallnotpass", 
+    host: "lavalink-de1.tools.sneakyhub.com",
+    port: 2333,
+    pass: "SNEAKYHUB@LJjD3q8yKGhgSQ7GaxeMe!JaJH#!S9Na4asxMhe",
   },
   
   //Alternate Lavalink
