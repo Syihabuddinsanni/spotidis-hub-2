@@ -24,7 +24,7 @@ module.exports = {
         let SearchString = args.join(" ");
         if (!SearchString) return client.sendTime(message.channel, `**Usage - **\`${GuildDB.prefix}play [song]\``);
         let CheckNode = client.Manager.nodes.get(client.config.Lavalink.id);
-        let Searching = await message.channel.send("");
+        let Searching = await message.channel.send(":mag_right: Searching...");
         if (!CheckNode || !CheckNode.connected) {
        return client.sendTime(message.channel,"<a:warn:866161245232693291> | **Lavalink node not connected**");
         }
