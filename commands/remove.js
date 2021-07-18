@@ -23,12 +23,12 @@ const { TrackUtils } = require("erela.js");
     const song = player.queue.slice(args[0] - 1, 1); 
     if (!player) return client.sendTime(message.channel, "<a:warn:866161245232693291> Tidak ada musik yang sedang diputar.");
     if (!message.member.voice.channel) return client.sendTime(message.channel, "<a:warn:866161245232693291>  Masuk voice channel dulu sobad!");
-    if (message.guild.me.voice.channel && message.member.voice.channel.id !== message.guild.me.voice.channel.id) return client.sendTime(message.channel, ":x: | **Bot nya lagi di pake cuk!**");
+    if (message.guild.me.voice.channel && message.member.voice.channel.id !== message.guild.me.voice.channel.id) return client.sendTime(message.channel, "<a:warn:866161245232693291> Bot nya lagi dipake cuk.");
         
     if (!player.queue || !player.queue.length || player.queue.length === 0)
       return message.channel.send("<a:warn:866161245232693291> Antrian kosong. Tidak ada yang dapat dihapus");
     let rm = new MessageEmbed()
-      .setDescription(`✅ **|** Berhasil menghapus nomor  **\`${Number(args[0])}\`** dalam antrian!`)
+      .setDescription(`<a:checklist:866180443572928532> **|** Berhasil menghapus nomor  **\`${Number(args[0])}\`** dalam antrian!`)
       .setColor("GREEN")
       if (isNaN(args[0]))rm.setDescription(`**Usage - **${client.config.prefix}\`remove [track]\``);
       if (args[0] > player.queue.length)
@@ -61,7 +61,7 @@ const { TrackUtils } = require("erela.js");
       const song = player.queue.slice(args[0] - 1, 1);
       if (!player) return client.sendTime(interaction, "<a:warn:866161245232693291> Tidak ada musik yang sedang diputar.");
       if (!member.voice.channel) return client.sendTime(interaction, "<a:warn:866161245232693291>  Masuk voice channel dulu sobad!");
-      if (guild.me.voice.channel && !guild.me.voice.channel.equals(member.voice.channel)) return client.sendTime(interaction, ":x: | **Bot nya lagi di pake cuk!**");
+      if (guild.me.voice.channel && !guild.me.voice.channel.equals(member.voice.channel)) return client.sendTime(interaction, ":x: Bot nya lagi dipake cuk.");
   
       if (!player.queue || !player.queue.length || player.queue.length === 0)
       return client.sendTime("<a:warn:866161245232693291> Tidak ada musik yang sedang diputar.");
