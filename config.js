@@ -19,12 +19,11 @@ module.exports = {
   Website: process.env.Website || "http://localhost", //Website where it was hosted at includes http or https || Use "0.0.0.0" if you using Heroku
 
  
-
   Lavalink : {
-
-    lava_host: "lava.link",
-    lava_port: "80",
-    lava_pass: "BlackKnight683",
+    id: "Main",
+    host: "lava.link",
+    port: "80",
+    pass: "youshallnotpass",
     },
   /*
   //Lavalink
