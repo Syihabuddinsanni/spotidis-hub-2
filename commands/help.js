@@ -27,7 +27,7 @@ module.exports = {
     let Embed = new MessageEmbed()
             .setAuthor(
               `Commands of ${client.user.username}`,
-              client.config.Image
+              client.config.IconURL
             )
             .setColor("#000000")
             .setFooter(
@@ -49,7 +49,7 @@ module.exports = {
         return client.sendTime(message.channel, `❌ | Unable to find that command.`);
 
       let embed = new MessageEmbed()
-        .setAuthor(`Command: ${cmd.name}`, client.config.Image)
+        .setAuthor(`Command: ${cmd.name}`, client.config.IconURL)
         .setDescription(cmd.description)
         .setColor("GREEN")
         //.addField("Name", cmd.name, true)
@@ -60,7 +60,7 @@ module.exports = {
             cmd.name
           }${cmd.usage ? " " + cmd.usage : ""}\``,
           true
-        ).setImage('https://cdn.discordapp.com/attachments/752712711556694057/865839960137007144/PicsArt_07-17-01.18.11.jpg')
+        ).setImage(client.config.Image)
         .addField(
           "Permissions",
           "Member: " +
@@ -109,7 +109,7 @@ SlashCommand: {
       let Embed = new MessageEmbed()
             .setAuthor(
               `Commands of ${client.user.username}`,
-              client.config.Image
+              client.config.IconURL
             )
             .setColor("#000000")
             .setFooter(
@@ -130,7 +130,7 @@ SlashCommand: {
           return client.sendTime(interaction, `❌ | Unable to find that command.`);
   
         let embed = new MessageEmbed()
-          .setAuthor(`Command: ${cmd.name}`, client.config.Image)
+          .setAuthor(`Command: ${cmd.name}`, client.config.IconURL)
           .setDescription(cmd.description)
           .setColor("GREEN")
           //.addField("Name", cmd.name, true)
@@ -142,7 +142,7 @@ SlashCommand: {
             }\`${cmd.usage ? " " + cmd.usage : ""}`,
             true
           )
-          .setImage('https://cdn.discordapp.com/attachments/752712711556694057/865839960137007144/PicsArt_07-17-01.18.11.jpg')
+          .setImage(client.config.Image)
           .addField(
             "Permissions",
             "Member: " +
