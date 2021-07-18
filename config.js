@@ -18,14 +18,6 @@ module.exports = {
   Permissions: 2205280576, //Bot Inviting Permissions
   Website: process.env.Website || "http://localhost", //Website where it was hosted at includes http or https || Use "0.0.0.0" if you using Heroku
 
- 
-  Lavalink : {
-    id: "Main",
-    host: "lava.link",
-    port: "80",
-    pass: "youshallnotpass",
-    },
-  /*
   //Lavalink
    Lavalink: {
     id: "Main",
@@ -34,11 +26,6 @@ module.exports = {
     pass: "youshallnotpass", 
   },
   
-
-LAVA_HOST=lava.link
-LAVA_PORT=80
-LAVA_PASS=BlackKnight683
-
   //Alternate Lavalink
   /*
   Lavalink: {
