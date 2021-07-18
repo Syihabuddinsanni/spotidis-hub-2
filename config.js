@@ -21,10 +21,10 @@ module.exports = {
  
 
   Lavalink : {
-    id: "Main",
-    host: "lava.link",
-    port: "80",
-    pass: "BlackKnight683",
+
+    lava_host: "lava.link",
+    lava_port: "80",
+    lava_pass: "BlackKnight683",
     },
   /*
   //Lavalink
