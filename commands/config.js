@@ -19,7 +19,7 @@ module.exports = {
   run: async (client, message, args, { GuildDB }) => {
     let Config = new MessageEmbed()
       .setAuthor("Server Config", client.config.IconURL)
-      .setColor("#FF0000")
+      .setColor("BLUE")
       .addField("Prefix", GuildDB.prefix, true)
       .addField("DJ Role", GuildDB.DJ ? `<@&${GuildDB.DJ}>` : "Belum disetting", true)
       .setDescription(`
