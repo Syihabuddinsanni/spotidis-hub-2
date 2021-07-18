@@ -28,11 +28,11 @@ module.exports = {
     let song = player.queue.current;
     let QueueEmbed = new MessageEmbed()
       .setAuthor("Sedang memutar", client.config.IconURL)
-      .setColor("RANDOM")
+      .setColor("BLUE")
       .setDescription(`[${song.title}](${song.uri})`)
       .addField("Requested by", `${song.requester}`, true)
       .addField(
-        "Duration",
+        "Durasi",
         `${
           client.ProgressBar(player.position, player.queue.current.duration, 15)
             .Bar
@@ -65,11 +65,11 @@ module.exports = {
       let song = player.queue.current;
       let QueueEmbed = new MessageEmbed()
         .setAuthor("Sedang memutar", client.config.IconURL)
-        .setColor("RANDOM")
+        .setColor("BLUE")
         .setDescription(`[${song.title}](${song.uri})`)
         .addField("Requested by", `${song.requester}`, true)
         .addField(
-          "Duration",
+          "Durasi",
           `${
             client.ProgressBar(
               player.position,
