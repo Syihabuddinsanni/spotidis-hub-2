@@ -52,6 +52,7 @@ module.exports = {
         .setAuthor(`Command: ${cmd.name}`, client.config.IconURL)
         .setDescription(cmd.description)
         .setColor("GREEN")
+        .setImage(client.config.Image)
         //.addField("Name", cmd.name, true)
         .addField("Aliases", `\`${cmd.aliases.join(", ")}\``, true)
         .addField(
@@ -60,7 +61,7 @@ module.exports = {
             cmd.name
           }${cmd.usage ? " " + cmd.usage : ""}\``,
           true
-        ).setImage(client.config.Image)
+        )
         .addField(
           "Permissions",
           "Member: " +
@@ -133,6 +134,7 @@ SlashCommand: {
           .setAuthor(`Command: ${cmd.name}`, client.config.IconURL)
           .setDescription(cmd.description)
           .setColor("GREEN")
+          .setImage(client.config.Image)
           //.addField("Name", cmd.name, true)
           .addField("Aliases", cmd.aliases.join(", "), true)
           .addField(
