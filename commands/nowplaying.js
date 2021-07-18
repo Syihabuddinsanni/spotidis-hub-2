@@ -22,17 +22,17 @@ module.exports = {
     if (!player)
       return client.sendTime(
         message.channel,
-        "❌ | **Tidak ada yang sedang diputar...**"
+        "<a:warn:866161245232693291> Tidak ada musik yang sedang diputar."
       );
 
     let song = player.queue.current;
     let QueueEmbed = new MessageEmbed()
       .setAuthor("Sedang memutar", client.config.IconURL)
-      .setColor("RANDOM")
+      .setColor("BLUE")
       .setDescription(`[${song.title}](${song.uri})`)
       .addField("Requested by", `${song.requester}`, true)
       .addField(
-        "Duration",
+        "Durasi",
         `${
           client.ProgressBar(player.position, player.queue.current.duration, 15)
             .Bar
@@ -59,17 +59,17 @@ module.exports = {
       if (!player)
         return client.sendTime(
           interaction,
-          "❌ | **Tidak ada yang sedang diputar...**"
+          "<a:warn:866161245232693291> Tidak ada musik yang sedang diputar."
         );
 
       let song = player.queue.current;
       let QueueEmbed = new MessageEmbed()
         .setAuthor("Sedang memutar", client.config.IconURL)
-        .setColor("RANDOM")
+        .setColor("BLUE")
         .setDescription(`[${song.title}](${song.uri})`)
         .addField("Requested by", `${song.requester}`, true)
         .addField(
-          "Duration",
+          "Durasi",
           `${
             client.ProgressBar(
               player.position,

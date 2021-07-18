@@ -23,7 +23,7 @@ module.exports = {
     let player = await client.Manager.get(message.guild.id);
     let SongTitle = args.join(" ");
     let SearchString = args.join(" ");
-    if (!args[0] && !player) return client.sendTime(message.channel, "❌ | **Tidak ada yang sedang diputar. . .**");
+    if (!args[0] && !player) return client.sendTime(message.channel, "<a:warn:866161245232693291> Tidak ada musik yang sedang diputar.");
     if (!args[0]) SongTitle = player.queue.current.title;
 
     let lyrics = await lyricsFinder(SongTitle);
@@ -34,7 +34,7 @@ module.exports = {
     let Pages = SplitedLyrics.map((ly) => {
       let em = new MessageEmbed()
         .setAuthor(`Lyrics for: ${SongTitle}`, client.config.IconURL)
-        .setColor("RANDOM")
+        .setColor("BLUE")
         .setDescription(ly.join("\n"));
 
       if (args.join(" ") !== SongTitle) em.setThumbnail(player.queue.current.displayThumbnail());
@@ -67,7 +67,7 @@ module.exports = {
     run: async (client, interaction, args, { GuildDB }) => {
       let player = await client.Manager.get(interaction.guild_id);
 
-      if (!interaction.data.options && !player) return client.sendTime(interaction, "❌ | **Tidak ada yang sedang diputar. . .**");
+      if (!interaction.data.options && !player) return client.sendTime(interaction, "<a:warn:866161245232693291> Tidak ada musik yang sedang diputar.");
 
       SongTitle = interaction.data.options ? interaction.data.options[0].value : player.queue.current.title;
       let lyrics = await lyricsFinder(SongTitle);
@@ -80,7 +80,7 @@ module.exports = {
       let Pages = SplitedLyrics.map((ly) => {
         let em = new MessageEmbed()
           .setAuthor(`Lyrics for: ${SongTitle}`, client.config.IconURL)
-          .setColor("RANDOM")
+          .setColor("BLUE")
           .setDescription(ly.join("\n"));
 
         if (SongTitle !== SongTitle) em.setThumbnail(player.queue.current.displayThumbnail());

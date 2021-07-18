@@ -160,7 +160,7 @@ class DiscordMusicBot extends Client {
             })}\``,
             true
           )
-          .setColor("GREEN");
+          .setColor("BLUE");
         //.setFooter("Started playing at");
         let NowPlaying = await client.channels.cache
           .get(player.textChannel)
