@@ -23,7 +23,7 @@ module.exports = {
     if (!player)
       return client.sendTime(
         message.channel,
-        "<a:warn:866161245232693291> | **Tidak ada yang sedang diputar. . . **"
+        "<a:warn:866161245232693291> Tidak ada musik dalam antrian."
       );
 
     if (!player.queue || !player.queue.length || player.queue === 0) {
@@ -130,7 +130,7 @@ module.exports = {
     run: async (client, interaction, args, { GuildDB }) => {
       let player = await client.Manager.get(interaction.guild_id);
       if (!player)
-        return client.sendTime(interaction, "<a:warn:866161245232693291> | **Tidak ada yang sedang diputar. . . **");
+        return client.sendTime(interaction, "<a:warn:866161245232693291> Tidak ada musik dalam antrian.");
 
       if (!player.queue || !player.queue.length || player.queue === 0) {
         let QueueEmbed = new MessageEmbed()
