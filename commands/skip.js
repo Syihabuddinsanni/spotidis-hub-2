@@ -46,9 +46,9 @@ module.exports = {
 
             if (!player) return client.sendTime(interaction, "<a:warn:866161245232693291> Gak bisa skip. gak ada lagu yang diputar.");
             console.log(interaction.data);
-            if (skipTo !== null && (isNaN(skipTo) || skipTo < 1 || skipTo > player.queue.length)) return client.sendTime(interaction, "<a:warn:866161245232693291> | **Invalid number to skip!**");
+            if (skipTo !== null && (isNaN(skipTo) || skipTo < 1 || skipTo > player.queue.length)) return client.sendTime(interaction, "<a:warn:866161245232693291> Nomor antrian salah !");
             player.stop(skipTo);
-            client.sendTime(interaction, "**Skipped!**");
+            client.sendTime(interaction, "<a:checklist:866180443572928532> **Skipped!**");
         },
     },
 };

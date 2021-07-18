@@ -91,7 +91,7 @@ module.exports = {
                     SongAddedEmbed.setDescription(`[${Searched.tracks[0].title}](${Searched.tracks[0].uri})`);
                     SongAddedEmbed.addField("Author", Searched.tracks[0].author, true);
                     SongAddedEmbed.addField("Durasi", `\`${prettyMilliseconds(Searched.tracks[0].duration, { colonNotation: true })}\``, true);
-                    if (player.queue.totalSize > 1) SongAddedEmbed.addField("Posisi di antrian", `${player.queue.size - 0}`, true);
+                    if (player.queue.totalSize > 1) SongAddedEmbed.addField("Antrian", `${player.queue.size - 0}`, true);
                     Searching.edit(SongAddedEmbed);
                 }
             }
@@ -161,7 +161,7 @@ module.exports = {
                             SongAddedEmbed.setColor("#000000");
                             SongAddedEmbed.setDescription(`[${Searched.tracks[0].info.title}](${Searched.tracks[0].info.uri})`);
                             SongAddedEmbed.addField("Author", Searched.tracks[0].info.author, true);
-                            if (player.queue.totalSize > 1) SongAddedEmbed.addField("Posisi di antrian", `${player.queue.size - 0}`, true);
+                            if (player.queue.totalSize > 1) SongAddedEmbed.addField("Antrian", `${player.queue.size - 0}`, true);
                             return interaction.send(SongAddedEmbed);
 
                     case "SEARCH_RESULT":
@@ -172,7 +172,7 @@ module.exports = {
                             SongAdded.setColor("#000000");
                             SongAdded.setDescription(`[${Searched.tracks[0].info.title}](${Searched.tracks[0].info.uri})`);
                             SongAdded.addField("Author", Searched.tracks[0].info.author, true);
-                            if (player.queue.totalSize > 1) SongAdded.addField("Posisi di antrian", `${player.queue.size - 0}`, true);
+                            if (player.queue.totalSize > 1) SongAdded.addField("Antrian", `${player.queue.size - 0}`, true);
                             return interaction.send(SongAdded);
 
 
@@ -211,7 +211,7 @@ module.exports = {
                             SongAddedEmbed.setDescription(`[${res.tracks[0].title}](${res.tracks[0].uri})`);
                             SongAddedEmbed.addField("Author", res.tracks[0].author, true);
                             SongAddedEmbed.addField("Durasi", `\`${prettyMilliseconds(res.tracks[0].duration, { colonNotation: true })}\``, true);
-                            if (player.queue.totalSize > 1) SongAddedEmbed.addField("Posisi di antrian", `${player.queue.size - 0}`, true);
+                            if (player.queue.totalSize > 1) SongAddedEmbed.addField("Antrian", `${player.queue.size - 0}`, true);
                             return interaction.send(SongAddedEmbed);
                             
                     case "PLAYLIST_LOADED":
@@ -237,7 +237,7 @@ module.exports = {
                             SongAddedEmbed.setDescription(`[${track.title}](${track.uri})`);
                             SongAddedEmbed.addField("Author", track.author, true);
                             SongAddedEmbed.addField("Durasi", `\`${prettyMilliseconds(track.duration, { colonNotation: true })}\``, true);
-                            if (player.queue.totalSize > 1) SongAddedEmbed.addField("Posisi di antrian", `${player.queue.size - 0}`, true);
+                            if (player.queue.totalSize > 1) SongAddedEmbed.addField("Antrian", `${player.queue.size - 0}`, true);
                             player.play();
                             return interaction.send(SongAddedEmbed);
                             
@@ -249,7 +249,7 @@ module.exports = {
                             SongAddedEmbed.setDescription(`[${track.title}](${track.uri})`);
                             SongAddedEmbed.addField("Author", track.author, true);
                             SongAddedEmbed.addField("Durasi", `\`${prettyMilliseconds(track.duration, { colonNotation: true })}\``, true);
-                            if (player.queue.totalSize > 1) SongAddedEmbed.addField("Posisi di antrian", `${player.queue.size - 0}`, true);
+                            if (player.queue.totalSize > 1) SongAddedEmbed.addField("Antrian", `${player.queue.size - 0}`, true);
                             interaction.send(SongAddedEmbed);
                         }
                 }

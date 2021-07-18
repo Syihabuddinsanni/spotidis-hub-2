@@ -23,9 +23,9 @@ module.exports = {
     if (!message.member.voice.channel)
       return client.sendTime(
         message.channel,
-        "❌ | **You must be in a voice channel to play something!**"
+        "<a:warn:866161245232693291> Masuk voice channel dulu sobad !"
       );
-      if (message.guild.me.voice.channel && message.member.voice.channel.id !== message.guild.me.voice.channel.id) return client.sendTime(message.channel, ":x: | **You must be in the same voice channel as me to use this command!**");
+      if (message.guild.me.voice.channel && message.member.voice.channel.id !== message.guild.me.voice.channel.id) return client.sendTime(message.channel, "<a:warn:866161245232693291> Bot nya lagi dipake cuk !");
 
     let SearchString = args.join(" ");
     if (!SearchString)
@@ -37,7 +37,7 @@ module.exports = {
     if (!CheckNode || !CheckNode.connected) {
       return client.sendTime(
         message.channel,
-        "❌ | **Lavalink node not connected**"
+        "<a:warn:866161245232693291> | **Lavalink node not connected**"
       );
     }
     const player = client.Manager.create({
@@ -119,7 +119,7 @@ module.exports = {
       SongAddedEmbed.setDescription(`[${Song.title}](${Song.uri})`);
       SongAddedEmbed.addField("Author", `${Song.author}`, true);
       SongAddedEmbed.addField(
-        "Duration",
+        "Durasi",
         `\`${prettyMilliseconds(player.queue.current.duration, {
           colonNotation: true,
         })}\``,
@@ -127,7 +127,7 @@ module.exports = {
       );
       if (player.queue.totalSize > 1)
         SongAddedEmbed.addField(
-          "Position in queue",
+          "Antrian",
           `${player.queue.size - 0}`,
           true
         );
@@ -160,7 +160,7 @@ module.exports = {
       if (!member.voice.channel)
         return client.sendTime(
           interaction,
-          "❌ | **Bot nya lagi dipake anying !.**" //You must be in the same voice channel as me to use this command!
+          "<a:warn:866161245232693291> | **Bot nya lagi dipake anying !.**" //You must be in the same voice channel as me to use this command!
         );
       if (
         guild.me.voice.channel &&
@@ -168,13 +168,13 @@ module.exports = {
       )
         return client.sendTime(
           interaction,
-          ":x: | **Bot nya lagi dipake anying!!!**" //You must be in the same voice channel as me to use this command!
+          "<a:warn:866161245232693291> | **Bot nya lagi dipake anying!!!**" //You must be in the same voice channel as me to use this command!
         );
       let CheckNode = client.Manager.nodes.get(client.config.Lavalink.id);
       if (!CheckNode || !CheckNode.connected) {
         return client.sendTime(
           interaction,
-          "❌ | **Lavalink node not connected**"
+          "<a:warn:866161245232693291> | **Lavalink node not connected**"
         );
       }
       let player = client.Manager.create({
@@ -195,11 +195,11 @@ module.exports = {
         switch (Searched.loadType) {
           case "LOAD_FAILED":
             if (!player.queue.current) player.destroy();
-            return client.sendError(interaction, `:x: | **Terjadi error saat searching**`); //there is an error while searching
+            return client.sendError(interaction, `<a:warn:866161245232693291> | **Terjadi error saat searching**`); //there is an error while searching
 
           case "NO_MATCHES":
             if (!player.queue.current) player.destroy();
-            return client.sendTime(interaction, ":x: | **Hasil tidak ditemukan**"); //No results were found
+            return client.sendTime(interaction, "<a:warn:866161245232693291> | **Hasil tidak ditemukan**"); //No results were found
           case "TRACK_LOADED":
             player.queue.add(TrackUtils.build(Searched.tracks[0], member.user));
             if (!player.playing && !player.paused && !player.queue.length)
@@ -233,13 +233,13 @@ module.exports = {
           }
         } catch (err) {
           return client.sendTime(
-            interaction, `:x: | **There was an error while searching:** ${err.message}`
+            interaction, `<a:warn:866161245232693291> | **There was an error while searching:** ${err.message}`
           );
         }
         switch (res.loadType) {
           case "NO_MATCHES":
             if (!player.queue.current) player.destroy();
-            return client.sendTime(interaction, ":x: | **No results were found**");
+            return client.sendTime(interaction, "<a:warn:866161245232693291> | **No results were found**");
           case "TRACK_LOADED":
             player.queue.add(res.tracks[0]);
             if (!player.playing && !player.paused && !player.queue.length)
@@ -295,7 +295,7 @@ module.exports = {
             } catch (e) {
               if (!player.queue.current) player.destroy();
               return awaitchannel.send(
-                "❌ | **You didn't provide a selection**"
+                "<a:warn:866161245232693291> | **You didn't provide a selection**"
               );
             }
 
@@ -324,13 +324,13 @@ module.exports = {
               SongAddedEmbed.setDescription(`[${track.title}](${track.uri})`);
               SongAddedEmbed.addField("Author", track.author, true);
               SongAddedEmbed.addField(
-                "Duration",
+                "Durasi",
                 `\`${prettyMilliseconds(track.duration, {
                   colonNotation: true,
                 })}\``,
                 true
               );
-              if (player.queue.totalSize > 1) SongAddedEmbed.addField("Position in queue", `${player.queue.size - 0}`, true);
+              if (player.queue.totalSize > 1) SongAddedEmbed.addField("Antrian", `${player.queue.size - 0}`, true);
               awaitchannel.send(SongAddedEmbed);
             }
         }
