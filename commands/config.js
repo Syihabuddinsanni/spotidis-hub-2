@@ -19,7 +19,7 @@ module.exports = {
   run: async (client, message, args, { GuildDB }) => {
     let Config = new MessageEmbed()
       .setAuthor("Server Config", client.config.IconURL)
-      .setColor("BLUE")
+      .setColor("#FF0000")
       .addField("Prefix", GuildDB.prefix, true)
       .addField("DJ Role", GuildDB.DJ ? `<@&${GuildDB.DJ}>` : "Belum disetting", true)
       .setDescription(`
@@ -30,17 +30,17 @@ Apa yang ingin di edit ?
 `);
 
     let ConfigMessage = await message.channel.send(Config);
-    await ConfigMessage.react("<:Number1:866133483398496256>");
-    await ConfigMessage.react("<:Number2:866133498771275817>");
+    await ConfigMessage.react("1️⃣");
+    await ConfigMessage.react("2️⃣");
     let emoji = await ConfigMessage.awaitReactions(
       (reaction, user) =>
         user.id === message.author.id &&
-        ["<:Number1:866133483398496256>", "<:Number2:866133498771275817>"].includes(reaction.emoji.name),
+        ["1️⃣", "2️⃣"].includes(reaction.emoji.name),
       { max: 1, errors: ["time"], time: 30000 }
     ).catch(() => {
       ConfigMessage.reactions.removeAll();
       client.sendTime(
-        message.channel, "<a:warn:866161245232693291> Waktu habis. Jalankan command ulang!"
+        message.channel, "<a:warn:866161245232693291> Waktu habis. Jalankan command ulang !"
       );
       ConfigMessage.delete(Config);
     });
@@ -54,7 +54,7 @@ Apa yang ingin di edit ?
     /**@type {MessageReaction} */
     let em = emoji;
     ConfigMessage.reactions.removeAll();
-    if (em._emoji.name === "<:Number1:866133483398496256>") {
+    if (em._emoji.name === "1️⃣") {
       await client.sendTime(message.channel, "Mau ganti prefix apa sobad ?");
       let prefix = await message.channel.awaitMessages(
         (msg) => msg.author.id === message.author.id,
