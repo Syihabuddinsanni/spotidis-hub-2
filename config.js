@@ -21,8 +21,8 @@ module.exports = {
   //Lavalink
   Lavalink: {
     id : "Main",
-    host: "n12.danbot.host",
-    port:  1426,
+    host: "lavalink-repl.rampoth.repl.co",
+    port:  443,
     pass: "youshallnotpass",
     },
   
