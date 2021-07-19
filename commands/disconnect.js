@@ -18,8 +18,8 @@ module.exports = {
    */
   run: async (client, message, args, { GuildDB }) => {
     let player = await client.Manager.get(message.guild.id);
-    if (!message.member.voice.channel) return client.sendTime(message.channel, "❌ | **You must be in a voice channel use this command**");
-    if (!player) return client.sendTime(message.channel,"❌ | **Nothing is playing right now...**");
+    if (!message.member.voice.channel) return client.sendTime(message.channel, "<a:warn:866161245232693291> Masuk voice channel dulu sobad !");
+    if (!player) return client.sendTime(message.channel,"<a:warn:866161245232693291> Tidak ada musik yang sedang diputar.");
     await client.sendTime(message.channel,":notes: | **Disconnected!**");
     await message.react("✅");
     player.destroy();
@@ -40,7 +40,7 @@ module.exports = {
       if (!member.voice.channel)
         return client.sendTime(
           interaction,
-          "❌ | **You must be in a voice channel to use this command.**"
+          "<a:warn:866161245232693291> Masuk voice channel dulu sobad !"
         );
       if (
         guild.me.voice.channel &&
@@ -48,14 +48,14 @@ module.exports = {
       )
         return client.sendTime(
           interaction,
-          `❌ | **You must be in ${guild.me.voice.channel} to use this command.**`
+          `<a:warn:866161245232693291> Kamu harus masuk ke ${guild.me.voice.channel} untuk melakukan command.`
         );
 
       let player = await client.Manager.get(interaction.guild_id);
       if (!player)
         return client.sendTime(
           interaction,
-          "❌ | **Nothing is playing right now...**"
+          "<a:warn:866161245232693291> Tidak ada musik yang sedang diputar."
         );
       player.destroy();
       client.sendTime(
