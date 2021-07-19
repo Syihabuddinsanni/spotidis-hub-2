@@ -17,15 +17,15 @@ module.exports = {
     "https://cdn.discordapp.com/attachments/752712711556694057/865839960137007144/PicsArt_07-17-01.18.11.jpg", //ngawur
   Permissions: 2205280576, //Bot Inviting Permissions
   Website: process.env.Website || "https://spotidis-hub.herokuapp.com", //http://localhost Website where it was hosted at includes http or https || Use "0.0.0.0" if you using Heroku
-  
+
+  //Lavalink
   Lavalink: {
     id: "Main",
-    host: "node3.rockbusterhostings.in.net",
+    host: "singapore.lavalink.org",
     port: 65535,
     pass: "pass134",
     },
-  //Lavalink
-
+  
   //Alternate Lavalink
   /*
   Lavalink: {
