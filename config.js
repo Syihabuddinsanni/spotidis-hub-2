@@ -21,7 +21,7 @@ module.exports = {
   //Lavalink
   Lavalink: {
     id : "Main",
-    host: "125.164.1.5",
+    host: "192.168.3.105",
     port:  1337,
     pass: "sihubtamvan",
     },
