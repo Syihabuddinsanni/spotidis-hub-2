@@ -21,7 +21,7 @@ module.exports = {
   //Lavalink
   Lavalink: {
     id: "Main",
-    host: "singapore.lavalink.org",
+    host: "node3.rockbusterhostings.in.net",
     port: 65535,
     pass: "pass134",
     },
