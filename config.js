@@ -20,9 +20,10 @@ module.exports = {
 
   //Lavalink
   Lavalink: {
+    id : "Main"
     host: "n12.danbot.host",
     port:  1426,
-    pass: "youshllnotpass",
+    pass: "youshallnotpass",
     },
   
   //Alternate Lavalink
