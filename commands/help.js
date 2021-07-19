@@ -104,7 +104,7 @@ SlashCommand: {
         (cmd) =>
           `> [\`${GuildDB ? GuildDB.prefix : client.config.DefaultPrefix}${
             cmd.name
-          }${cmd.usage ? " " + cmd.usage : ""}\`](https://spotidis-hub.herokuapp.com/#commands) - ${cmd.description}`
+          }${cmd.usage ? " " + cmd.usage : ""}\`](https://spotidis-hub.herokuapp.com/#commands) - ${cmd.description}` //NEW UI
       );
   
       let Embed = new MessageEmbed()
