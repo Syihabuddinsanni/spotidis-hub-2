@@ -31,6 +31,9 @@ module.exports = {
           client.sendTime(message.channel, `<a:checklist:866180443572928532> Loop \`Berhasil Diaktifkan!\``);
         }
     },
+
+//SLASH COMMANDS
+
     SlashCommand: {
        /**
        *

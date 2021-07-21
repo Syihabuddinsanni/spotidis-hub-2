@@ -101,6 +101,8 @@ module.exports = {
         }
     },
 
+//SLASH COMMANDS
+
     SlashCommand: {
         options: [
             {
