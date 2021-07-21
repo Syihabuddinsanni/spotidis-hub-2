@@ -30,7 +30,7 @@ module.exports = {
               client.config.IconURL
             )
             .setColor("#0A179A")
-            .addFields(
+            .addFields( //edit sekarang
               { name: '<:blurple_support:867399884701171732> Fun commands', value: '\`Masi dalam pengerkaan\`' },
               { name: '<:blurple_undeafened:867399815255556106> Play music', value: '`bassboost <none|low|medium|high>` | `play` | `pause` | `search` | `nowplaying` | `queue` | `volume` | `skip` | `skipto` | `seek` | `resume` | `remove` | `grab` | `disconnect` | `clear` | `loop` | `loopqueue` | `lyrics`'},
               { name: '', value: '  [<:blurple_link:867400057350389790> **Support Server**](https://discord.gg/shehdSk8s3) |<:blurple_github:867418757947981834> [**GitHub**](https://github.com/syihabuddin) |<:CertifiedModerator:867418712327454730> By [**Sh3hub1337**](https://github.com/syihabuddin)' },
