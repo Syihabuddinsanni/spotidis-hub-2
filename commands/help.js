@@ -33,7 +33,7 @@ module.exports = {
             .addFields(
               { name: '<:blurple_support:867399884701171732> Fun commands', value: '\`Masi dalam pengerkaan\`' },
               { name: '<:blurple_undeafened:867399815255556106> Play music', value: '`bassboost <none|low|medium|high>` | `play` | `pause` | `search` | `nowplaying` | `queue` | `volume` | `skip` | `skipto` | `seek` | `resume` | `remove` | `grab` | `disconnect` | `clear` | `loop` | `loopqueue` | `lyrics`'},
-              { name: '<:blurple_link:867400057350389790> Information', value: '  [<a:NitroBadge:864068158372708392> **Support Server**](https://discord.gg/shehdSk8s3) |<a:NitroBadge:864068158372708392> [**GitHub**](https://github.com/syihabuddin) |<a:NitroBadge:864068158372708392> By [**Sh3hub1337**](https://github.com/syihabuddin)' },
+              { name: '', value: '  [<:blurple_link:867400057350389790> **Support Server**](https://discord.gg/shehdSk8s3) |<:blurple_github:867418757947981834> [**GitHub**](https://github.com/syihabuddin) |<:CertifiedModerator:867418712327454730> By [**Sh3hub1337**](https://github.com/syihabuddin)' },
             )
             .setFooter(
               `To get info of each command type ${
