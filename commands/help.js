@@ -25,31 +25,25 @@ module.exports = {
     );
 
     let Embed = new MessageEmbed()
-            .setAuthor(
-              `Commands of ${client.user.username}`,
-              client.config.IconURL
-            )
-            .setColor("#0A179A")
-            .addFields(
-              { name: '<:blurple_support:867399884701171732> Fun commands', value: '\`Masi dalam pengerkaan\`' },
-              { name: '\u200B', value: '\u200B' },
-              { name: '<:blurple_undeafened:867399815255556106> Play music', value: '`!help` - blablablabla \n `jancok` - wakowaokwa', inline: true },
-              { name: '<:blurple_link:867400057350389790> Information', value: 'Some value here', inline: true },
-            )
-            .setDescription(
-              `Prefix saat ini \` ${
-                GuildDB ? GuildDB.prefix : client.config.DefaultPrefix
-              }\` \n
-              Kalo mau ganti prefix ketikan \`!config\` `
-            )
-           
-            .addField('Inline field title', 'Some value here', true)
-            .setImage('https://cdn.discordapp.com/attachments/752712711556694057/866237935225143306/PicsArt_07-18-03.38.48.jpg')
-            .setFooter(`
-            
-            Discord Music Bot Version: 0.91 **(Beta Version)**
-  [✨ **Support Server**](https://discord.gg/shehdSk8s3) | [**GitHub**](https://github.com/syihabuddin) | By [**Sh3hub1337**](https://github.com/syihabuddin)
-  `);
+    embed.setTitle('Commands List')
+    embed.setColor(`${embedColor}`)
+    embed.setDescription('Prefix: `' + `${prefix}`+ '` \n\n')
+    let list = ' '
+    for (const command of commands) {
+   
+      const mainCommand =
+        typeof command.commands === 'string'
+          ? command.commands
+          : command.commands[0]
+      const args = command.expectedArgs ? ` ${command.expectedArgs}` : ''
+      const { description } = command
+
+      list += ' `'+`${mainCommand}`+'` '
+    }
+    
+    embed.addFields(
+        {name: 'general commands', value: list, inline: true
+        })
   
     if (!args[0]) message.channel.send(Embed);
     else {
