@@ -42,7 +42,7 @@ module.exports = {
                 GuildDB ? GuildDB.prefix : client.config.DefaultPrefix
               }help [Command] | Have a nice day!`
             )
-            .setImage('https://cdn.discordapp.com/attachments/840568082976210974/867431538169741322/standard.gif')
+            .setImage('https://cdn.discordapp.com/attachments/840568082976210974/867446594102100009/standard_1.gif')
             .setDescription(`
             
             Discord Music Bot Version: 0.91 **(Beta Version)**
