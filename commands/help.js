@@ -32,7 +32,7 @@ module.exports = {
             .setColor("#0A179A")
             .addFields(
               { name: '<:blurple_support:867399884701171732> Fun commands', value: '\`Masi dalam pengerkaan\`' },
-              { name: '<:blurple_undeafened:867399815255556106> Play music', value: '`!help` - blablablabla | `jancok` - wakowaokwa'},
+              { name: '<:blurple_undeafened:867399815255556106> Play music', value: '`play` | `>bassboost <none|low|medium|high>` | `>clear` | `>loop `'},
               { name: '<:blurple_link:867400057350389790> Information', value: 'Some value here' },
             )
             .setFooter(
@@ -40,8 +40,6 @@ module.exports = {
                 GuildDB ? GuildDB.prefix : client.config.DefaultPrefix
               }help [Command] | Have a nice day!`
             )
-           
-            .addField('Inline field title', 'Some value here', true)
             .setImage('https://cdn.discordapp.com/attachments/752712711556694057/866237935225143306/PicsArt_07-18-03.38.48.jpg')
             .setDescription(`
             
