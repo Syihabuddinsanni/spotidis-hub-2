@@ -29,7 +29,7 @@ module.exports = {
     if (!player.queue || !player.queue.length || player.queue === 0) {
       let QueueEmbed = new MessageEmbed()
         .setAuthor("Sedang Memutar", client.config.IconURL)
-        .setColor("#A9A9A9") //silver
+        .setColor("#0A179A") //silver
         .setDescription(
           `[${player.queue.current.title}](${player.queue.current.uri})`
         )
@@ -72,7 +72,7 @@ module.exports = {
 
       let Embed = new MessageEmbed()
         .setAuthor("Daftar antrian :", client.config.IconURL)
-        .setColor("#A9A9A9") //silver
+        .setColor("#0A179A") //silver
         .setDescription(
           `**Sedang Memutar:** \n[${player.queue.current.title}](${player.queue.current.uri}) \n\n**Up Next:** \n${SongsDescription}\n\n`
         )
@@ -135,7 +135,7 @@ module.exports = {
       if (!player.queue || !player.queue.length || player.queue === 0) {
         let QueueEmbed = new MessageEmbed()
           .setAuthor("Sedang Memutar", client.config.IconURL)
-          .setColor("#A9A9A9") //silver
+          .setColor("#0A179A") //silver
           .setDescription(
             `[${player.queue.current.title}](${player.queue.current.uri})`
           )
@@ -177,7 +177,7 @@ module.exports = {
 
         let Embed = new MessageEmbed()
           .setAuthor("Daftar antrian :", client.config.IconURL)
-          .setColor("#A9A9A9") //silver
+          .setColor("#0A179A") //silver
           .setDescription(
             `**Sedang Memutar:** \n[${player.queue.current.title}](${player.queue.current.uri}) \n\n**Up Next:** \n${SongsDescription}\n\n`
           )

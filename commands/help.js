@@ -29,7 +29,7 @@ module.exports = {
               `Commands of ${client.user.username}`,
               client.config.IconURL
             )
-            .setColor("#000000")
+            .setColor("#0A179A")
             .setFooter(
               `To get info of each command type ${
                 GuildDB ? GuildDB.prefix : client.config.DefaultPrefix
@@ -112,7 +112,7 @@ SlashCommand: {
               `Commands of ${client.user.username}`,
               client.config.IconURL
             )
-            .setColor("#000000")
+            .setColor("#0A179A")
             .setFooter(
               `To get info of each command type ${
                 GuildDB ? GuildDB.prefix : client.config.DefaultPrefix
