@@ -34,7 +34,7 @@ module.exports = {
               { name: '<:blurple_image:867426661918441483> __Images__', value: '> \`Masi dalam pengerkaan\`' },
               { name: '<:blurple_undeafened:867399815255556106> __Music__', value: '> `bassboost <none|low|medium|high>` | `play` | `pause` | `search` | `nowplaying` | `queue` | `volume` | `skip` | `skipto` | `seek` | `resume` | `remove` | `grab` | `disconnect` | `clear` | `loop` | `loopqueue` | `lyrics`'},
               { name: '<:blurple_settings:867424376236408832> __Utility__', value: '> `invite` | `stats` | `config` | `ping`' },
-              { name: '\n ', value: '  [<:blurple_link:867400057350389790> **Support Server**](https://discord.gg/shehdSk8s3) | <:blurple_github:867418757947981834> [**GitHub**](https://github.com/syihabuddin) | <:CertifiedModerator:867418712327454730> By [**Sh3hub1337**](https://github.com/syihabuddin)' },
+              { name: '\n<:blank:864149186811133972> ', value: '  [<:blurple_link:867400057350389790> **Support Server**](https://discord.gg/shehdSk8s3) | <:blurple_github:867418757947981834> [**GitHub**](https://github.com/syihabuddin) | <:CertifiedModerator:867418712327454730> By [**Sh3hub1337**](https://github.com/syihabuddin)' },
               
             )
             .setFooter(
