@@ -1,15 +1,15 @@
 module.exports = async (client) => {
   client.Ready = true, 
   client.user.setPresence({
-    status: "idle",  // You can show online, idle, and dnd
+    status: "online",  // You can show online, idle, and dnd
     activity: [{
         name: "Working On Update!",  // The message shown
-        type: "WATCHING", // PLAYING, WATCHING, LISTENING, STREAMING,
+        type: "LISTENING", // PLAYING, WATCHING, LISTENING, STREAMING,
     }
     , {
-        type: "LISTENING",
         name: "!help | sadis.gang",
-        url: "https://discord.gg/gj65TB8Y"
+        type: "LISTENING",
+ 
     }] ,
     //status akan ganti setiap 15 secod
     interval: 15
