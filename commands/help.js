@@ -30,19 +30,20 @@ module.exports = {
               client.config.IconURL
             )
             .setColor("#0A179A")
-            .setFooter(
-              `To get info of each command type ${
-                GuildDB ? GuildDB.prefix : client.config.DefaultPrefix
-              }help [Command] | Have a nice Day Brader Wokwkowko!`
-            )
             .addFields(
               { name: 'Regular field title', value: 'Some value here' },
               { name: '\u200B', value: '\u200B' },
               { name: 'Inline field title', value: 'Some value here', inline: true },
               { name: 'Inline field title', value: 'Some value here', inline: true },
             )
+            .setFooter(
+              `To get info of each command type ${
+                GuildDB ? GuildDB.prefix : client.config.DefaultPrefix
+              }help [Command] | Have a nice Day Brader Wokwkowko!`
+            )
+           
             .addField('Inline field title', 'Some value here', true)
-            .setImage('https://i.imgur.com/wSTFkRM.png')
+            .setImage('https://cdn.discordapp.com/attachments/752712711556694057/866237935225143306/PicsArt_07-18-03.38.48.jpg')
             .setDescription(`
             
             Discord Music Bot Version: 0.91 **(Beta Version)**
