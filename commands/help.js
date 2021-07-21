@@ -1,173 +1,165 @@
 const { MessageEmbed } = require("discord.js");
-// —— A fast and easy API to create a buttons in discord using discord.js
- const { MessageButton,
-  MessageActionRow }  = require( "discord-buttons");
 
-// ██████ | ███████████████████████████████████████████████████████████████████
+module.exports = {
+  name: "help",
+  description: "Informasi tentang command bot", //Information about the bot
+  usage: "[command]",
+  permissions: {
+    channel: ["VIEW_CHANNEL", "SEND_MESSAGES", "EMBED_LINKS"],
+    member: [],
+  },
+  aliases: ["command", "commands", "cmd"],
+  /**
+   *
+   * @param {import("../structures/DiscordMusicBot")} client
+   * @param {import("discord.js").Message} message
+   * @param {string[]} args
+   * @param {*} param3
+   */
+   run: async (client, message, args, { GuildDB }) => {
+    let Commands = client.commands.map(
+      (cmd) =>
+        `> [\`${GuildDB ? GuildDB.prefix : client.config.DefaultPrefix}${
+          cmd.name
+        }${cmd.usage ? " " + cmd.usage : ""}\`](https://spotidis-hub.herokuapp.com/#commands) - ${cmd.description}` // EDIT BESOK
+    );
 
-// —— Create & export a class for the command that extends the base command
-class Help extends Command {
+    let Embed = new MessageEmbed()
+            .setAuthor(
+              `Commands of ${client.user.username}`,
+              client.config.IconURL
+            )
+            .setColor("#0A179A")
+            .setFooter(
+              `To get info of each command type ${
+                GuildDB ? GuildDB.prefix : client.config.DefaultPrefix
+              }help [Command] | Have a nice Day Brader Wokwkowko!`
+            ).setDescription(`
+            
+            Discord Music Bot Version: 0.91 **(Beta Version)**
+  [✨ **Support Server**](https://discord.gg/shehdSk8s3) | [**GitHub**](https://github.com/syihabuddin) | By [**Sh3hub1337**](https://github.com/syihabuddin)
+  `);
+  
+    if (!args[0]) message.channel.send(Embed);
+    else {
+      let cmd =
+        client.commands.get(args[0]) ||
+        client.commands.find((x) => x.aliases && x.aliases.includes(args[0]));
+      if (!cmd)
+        return client.sendTime(message.channel, `❌ | Unable to find that command.`);
 
-constructor( client ) {
-  super( client, {
-      name        : "help",
-      description : "Displays the list of available commands",
-      usage       : "help { command }",
-      category    : "General",
-      args        : false,
-      botPerms    : "SEND_MESSAGES",
-      userPerms   : "SEND_MESSAGES",
-      guildOnly   : false
-  } );
-}
+      let embed = new MessageEmbed()
+        .setAuthor(`Command: ${cmd.name}`, client.config.IconURL)
+        .setDescription(cmd.description)
+        .setColor("GREEN")
+        .setImage(client.config.Image)
+        //.addField("Name", cmd.name, true)
+        .addField("Aliases", `\`${cmd.aliases.join(", ")}\``, true)
+        .addField(
+          "Usage",
+          `\`${GuildDB ? GuildDB.prefix : client.config.DefaultPrefix}${
+            cmd.name
+          }${cmd.usage ? " " + cmd.usage : ""}\``,
+          true, client.config.Image
+        )
+        .addField(
+          "Permissions",
+          "Member: " +
+            cmd.permissions.member.join(", ") +
+            "\nBot: " +
+            cmd.permissions.channel.join(", "),
+          true
+          
+        )
+        .setFooter(
+          `Prefix - ${
+            GuildDB ? GuildDB.prefix : client.config.DefaultPrefix
+          }`
+        );
 
-async run( message, [ command ] ) {
+      message.channel.send(embed);
+    }
+  },
 
-  if ( command ) {
-
-      // —— Standardization
-      command = command.toLowerCase();
-
-      // —— Delete the prefix if it has been used
-      if ( command.startsWith( message.guild.prefix ) )
-          command = command.substring( message.guild.prefix.length );
-
-      // —— Search the command among those available
-      const commandData = message.client.commands.find(
-          ( c ) => c.name === command
-          || c.aliases.includes( command )
-      );
-
-      if ( !commandData )
-          return super.respond( this.notFound );
-
-      super.respond( { embed: {
-          color       : "0x7354f6",
-          title       : this.language.pTitle( commandData.name ),
-          description : `> ${commandData.description}`,
-          fields      : [{
-              name    : this.language.pSName,
-              value   : this.language.pSValue( message.guild.prefix, commandData.usage ),
-          }, {
-              name    : this.language.pEName,
-              value   : this.language.pEValue( message.guild.prefix, commandData.example ),
-          }],
-      }});
-
-      return;
-
-  }
-
-  // —— Takes a random Luna face
-  const faceFoler      = await fs.readdir( "./Assets/Faces" )
-      , face           = faceFoler[ ~~( Math.random() * faceFoler.length ) ]
-
-  const { chunks } = message.client.utils;
-
-  // —— Group commands by categories
-  const categories = message.client.commands.reduce( ( groups, item ) => ({
-      ...groups,
-      [item.category]: [...( groups[item.category] || []), item]
-  } ), {} );
-
-  let buttons = [];
-
-  // —— Generates buttons with category names
-  for (const category in categories ) {
-      if ( Object.hasOwnProperty.call( categories, category ) ) {
-
-          if ( category === "Owner" )
-              continue;
-
-          buttons.push(
-              new MessageButton()
-                  .setLabel( category )
-                  .setStyle("grey")
-                  .setID( category )
-          );
-
-      }
-  }
-
-  buttons.push(
-      new MessageButton()
-          .setLabel( this.language.doc )
-          .setStyle( "url" )
-          .setURL( "https://lunadoc.vercel.app" )
-   );
-
-  // —— Generates rows of buttons
-  buttons = [ ...chunks( buttons, 5 ) ].map( ( r ) => {
-      return new MessageActionRow().addComponents( r );
-  });
-
-  const pagination = await message.channel.send({
-      embed: {
-          color       : "0x7354f6",
-          title       : this.language.firstTitle,
-          thumbnail   : {
-              url     : `attachment://${face}`
-          },
-          description : this.language.firstDesc,
+SlashCommand: {
+    options: [
+      {
+        name: "command",
+        description: "Get information on a specific command",
+        value: "command",
+        type: 3,
+        required: false
       },
-      components      : buttons,
-      files           : [{
-          attachment  : `./Assets/Faces/${face}`,
-          name        : face
-      }],
-  })
+    ],
+    /**
+   *
+   * @param {import("../structures/DiscordMusicBot")} client
+   * @param {import("discord.js").Message} message
+   * @param {string[]} args
+   * @param {*} param3
+   */
 
-  // —— Creation of a collector, it will react when a user presses a button on the targeted message
-  const collector = pagination.createButtonCollector(
-      ( ) => true,
-      // —— Collector for 5 minutes
-      { time: 300000 });
-  // —— When a user who has passed the filter uses a button
-  collector.on( "collect", async ( button ) => {
+    run: async (client, interaction, args, { GuildDB }) => {
+      let Commands = client.commands.map(
+        (cmd) =>
+          `> [\`${GuildDB ? GuildDB.prefix : client.config.DefaultPrefix}${
+            cmd.name
+          }${cmd.usage ? " " + cmd.usage : ""}\`](https://spotidis-hub.herokuapp.com/#commands) - ${cmd.description}` //NEW UI
+      );
+  
+      let Embed = new MessageEmbed()
+            .setAuthor(
+              `Commands of ${client.user.username}`,
+              client.config.IconURL
+            )
+            .setColor("#0A179A")
+            .setFooter(
+              `To get info of each command type ${
+                GuildDB ? GuildDB.prefix : client.config.DefaultPrefix
+              }help [Command] | Have a nice day!`
+            ).setDescription(`${Commands.join("\n")}
 
-      // —— Changes the color of the button to blue - Indicates the current page
-      const thisButton = buttons.map( ( c ) => c.components.find( ( b ) => b.custom_id === button.id && !button.url ));
-      thisButton && ( thisButton[0].style = 1 );
-
-      // —— Editing the content, and the buttons, according to the page
-      await pagination.edit({
-          embed: {
-              color       : "0x7354f6",
-              author      : {
-                  name    : this.language.list,
-              },
-              title       : button.id,
-              description : [
-                  "```",
-                  categories[button.id].map( ( cmd ) => {
-                      return `${message.guild.prefix}${cmd.name.padEnd( 12 , " ")}${cmd.description}`
-                  }).join( "\n" ),
-                   "```",
-              ].join( "\n" ),
-              footer      : {
-                  text    : this.language.footer( message.guild.prefix ),
-                  icon_url: `attachment://${face}`
-              }
-          },
-          components      : buttons
-      });
-
-      // —— Reset the default gray color of the buttons
-      buttons.forEach( ( c ) => c.components.forEach( ( b ) => !b.url && ( b.style = 2 ) ) );
-
-      // —— Confirms to the "interaction" that it has worked
-      await button.defer();
-
-  });
-  // —— At the end, the interaction with the buttons is not allowed anymore, we will disable them
-  collector.on("end", async ( ) => {
-
-      // —— Editing the message, remove the embeds
-      await pagination.delete().catch( ( err ) => err );
-  });
-
-}
-
-}
-
-module.exports = Help;
+  Discord Music Bot Version: 0.91 **(Beta Version)**
+  [✨ **Support Server**](https://discord.gg/shehdSk8s3) | [**GitHub**](https://github.com/syihabuddin) | By [**Sh3hub1337**](https://github.com/syihabuddin) 
+  https://cdn.discordapp.com/attachments/752712711556694057/865839960137007144/PicsArt_07-17-01.18.11.jpg`);
+      if (!args) return interaction.send(Embed);
+      else {
+        let cmd =
+          client.commands.get(args[0].value) ||
+          client.commands.find((x) => x.aliases && x.aliases.includes(args[0].value));
+        if (!cmd)
+          return client.sendTime(interaction, `❌ | Unable to find that command.`);
+  
+        let embed = new MessageEmbed()
+          .setAuthor(`Command: ${cmd.name}`, client.config.IconURL)
+          .setDescription(cmd.description)
+          .setColor("GREEN")
+          .setImage(client.config.Image)
+          //.addField("Name", cmd.name, true)
+          .addField("Aliases", cmd.aliases.join(", "), true)
+          .addField(
+            "Usage",
+            `\`${GuildDB ? GuildDB.prefix : client.config.DefaultPrefix}${
+              cmd.name
+            }\`${cmd.usage ? " " + cmd.usage : ""}`,
+            true,client.config.Image
+          )
+         
+          .addField(
+            "Permissions",
+            "Member: " +
+              cmd.permissions.member.join(", ") +
+              "\nBot: " +
+              cmd.permissions.channel.join(", "),
+            true
+          )
+          .setFooter(
+            `Prefix - ${
+              GuildDB ? GuildDB.prefix : client.config.DefaultPrefix
+            }`
+          );
+  
+        interaction.send(embed);
+      }
+  },
+}};
