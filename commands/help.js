@@ -31,8 +31,8 @@ module.exports = {
             )
             .setColor("#0A179A")
             .addFields( //edit sekarang
-              { name: '<:blurple_support:867399884701171732> Fun commands', value: '\`Masi dalam pengerkaan\`' },
-              { name: '<:blurple_undeafened:867399815255556106> Play music', value: '`bassboost <none|low|medium|high>` | `play` | `pause` | `search` | `nowplaying` | `queue` | `volume` | `skip` | `skipto` | `seek` | `resume` | `remove` | `grab` | `disconnect` | `clear` | `loop` | `loopqueue` | `lyrics`'},
+              { name: '<:blurple_support:867399884701171732> Fun commands', value: '> \`Masi dalam pengerkaan\`' },
+              { name: '<:blurple_undeafened:867399815255556106> Play music', value: '> `bassboost <none|low|medium|high>` | `play` | `pause` | `search` | `nowplaying` | `queue` | `volume` | `skip` | `skipto` | `seek` | `resume` | `remove` | `grab` | `disconnect` | `clear` | `loop` | `loopqueue` | `lyrics`'},
               { name: '', value: '  [<:blurple_link:867400057350389790> **Support Server**](https://discord.gg/shehdSk8s3) |<:blurple_github:867418757947981834> [**GitHub**](https://github.com/syihabuddin) |<:CertifiedModerator:867418712327454730> By [**Sh3hub1337**](https://github.com/syihabuddin)' },
             )
             .setFooter(
@@ -44,12 +44,8 @@ module.exports = {
             .setDescription(`
             
             Discord Music Bot Version: 0.91 **(Beta Version)**
-  Prefix saat ini \` ${
-    GuildDB ? GuildDB.prefix : client.config.DefaultPrefix
-  }\` 
-  Kalo mau ganti prefix ketikan  ${
-    GuildDB ? GuildDB.prefix : client.config.DefaultPrefix
-  }\` config `);
+  Prefix saat ini \`${  GuildDB ? GuildDB.prefix : client.config.DefaultPrefix  }\` 
+  Kalo mau ganti prefix ketikan  \`config\` `);
   
     if (!args[0]) message.channel.send(Embed);
     else {
