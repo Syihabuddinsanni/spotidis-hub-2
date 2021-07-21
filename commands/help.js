@@ -32,7 +32,7 @@ module.exports = {
             .setColor("#0A179A")
             .addFields(
               { name: '<:blurple_support:867399884701171732> Fun commands', value: '\`Masi dalam pengerkaan\`' },
-              { name: '<:blurple_undeafened:867399815255556106> Play music', value: '`play` | `>bassboost <none|low|medium|high>` | `>clear` | `>loop `'},
+              { name: '<:blurple_undeafened:867399815255556106> Play music', value: '`bassboost <none|low|medium|high>` | `play` | `pause` | `search` | `nowplaying` | `queue` | `volume` | `skip` | `skipto` | `seek` | `resume` | `remove` | `grab` | `disconnect` | `clear` | `loop` | `loopqueue` | `lyrics`'},
               { name: '<:blurple_link:867400057350389790> Information', value: 'Some value here' },
             )
             .setFooter(
