@@ -32,8 +32,8 @@ module.exports = {
             .setColor("#0A179A")
             .addFields(
               { name: '<:blurple_support:867399884701171732> Fun commands', value: '\`Masi dalam pengerkaan\`' },
-              { name: '<:blurple_undeafened:867399815255556106> Play music', value: '`!help` - blablablabla | `jancok` - wakowaokwa', inline: true },
-              { name: '<:blurple_link:867400057350389790> Information', value: 'Some value here', inline: true },
+              { name: '<:blurple_undeafened:867399815255556106> Play music', value: '`!help` - blablablabla | `jancok` - wakowaokwa'},
+              { name: '<:blurple_link:867400057350389790> Information', value: 'Some value here' },
             )
             .setFooter(
               `To get info of each command type ${
