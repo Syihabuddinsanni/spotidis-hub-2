@@ -1,6 +1,6 @@
 module.exports = {
-	name: 'del',
-	description: 'deletes messages if you have permissions',
+	name: "del",
+	description: "deletes messages if you have permissions",
     usage: "",
     permissions: {
       channel: ["VIEW_CHANNEL", "SEND_MESSAGES", "EMBED_LINKS"],
