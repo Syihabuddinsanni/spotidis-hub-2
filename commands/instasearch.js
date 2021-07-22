@@ -21,7 +21,7 @@ module.exports = {
         const name = args.join(" ");
 
         if (!name) {
-            return message.channel.send("**Please Enter A Name!**")
+            return message.channel.send("<a:warn:866161245232693291> Masukin username! ")
                 .then(m => m.delete({timeout: 5000}));
         }
 
@@ -32,7 +32,7 @@ module.exports = {
         try {
             res = await fetch(url).then(url => url.json());
         } catch (e) {
-            return message.channel.send("I couldn't find that account").then(msg => {
+            return message.channel.send("<a:warn:866161245232693291> Terjadi masalah / Akun tidak ditemukan").then(msg => {
                 msg.delete({timeout: 5000})
             })
         }
