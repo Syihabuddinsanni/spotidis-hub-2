@@ -1,6 +1,19 @@
 module.exports = {
 	name: 'del',
 	description: 'deletes messages if you have permissions',
+    usage: "",
+    permissions: {
+      channel: ["VIEW_CHANNEL", "SEND_MESSAGES", "EMBED_LINKS"],
+      member: ["ADMINISTRATOR"],
+    },
+    aliases: ["delete"],
+    /**
+*
+* @param {import("../structures/DiscordMusicBot")} client
+* @param {import("discord.js").Message} message
+* @param {string[]} args
+* @param {*} param3
+*/
 	execute(message, args, client) {
         if (!message.member.hasPermission('MANAGE_MESSAGES')) {
             message.channel.send("You do not have permissions to do that.")
