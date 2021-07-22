@@ -1,3 +1,5 @@
+const { MessageEmbed, MessageReaction } = require("discord.js");
+
 module.exports = {
 	name: "del",
 	description: "deletes messages if you have permissions",
