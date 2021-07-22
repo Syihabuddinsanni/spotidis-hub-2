@@ -29,7 +29,9 @@ module.exports = {
         await message.react("✅");
     },
 
-    SlashCommand: {
+//SLASH COMMANDS
+  
+SlashCommand: {
         /**
      *
      * @param {import("../structures/DiscordMusicBot")} client

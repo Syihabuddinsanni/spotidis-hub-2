@@ -31,6 +31,9 @@ module.exports = {
           client.sendTime(message.channel, `:repeat: Queue Loop \`enabled\``);
         }
     },
+
+//SLASH COMMANDS
+
     SlashCommand: {
        /**
        *

@@ -46,6 +46,8 @@ module.exports = {
     else return client.Pagination(message, Pages);
   },
 
+  //SLASH COMMANDS
+
   SlashCommand: {
     options: [
       {

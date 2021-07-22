@@ -16,21 +16,22 @@ module.exports = {
 * @param {string[]} args
 * @param {*} param3
 */
-	execute(message, args, client) {
+run: async (client, message, args, { GuildDB }) => {
+	
         if (!message.member.hasPermission('MANAGE_MESSAGES')) {
-            message.channel.send("You do not have permissions to do that.")
+            message.channel.send("Izin kamu ilegal (bukan admin).")
         }
         else if(isNaN(parseInt(args[0]))){
-            message.react('❌')
-            message.channel.send("Wrong syntax. Syntax: `,rm [number]`")
+            message.react('<a:warn:866161245232693291>')
+            message.channel.send("<a:warn:866161245232693291> Syntax salah. Syntax: `del [number]`")
         }else if(parseInt(args[0]) >= 100){
-            message.react('❌')
-            message.channel.send("You can delete only 99 messages at a time.")
+            message.react('<a:warn:866161245232693291>')
+            message.channel.send("<a:warn:866161245232693291> Maksimal delete message hanya 99")
         }
         else{
             message.channel.bulkDelete((parseInt(args[0]) + 1))
             .catch((err) => {
-                message.react('❌')
+                message.react('<a:warn:866161245232693291>')
                 message.channel.send("Error : " + err)
             })
         }

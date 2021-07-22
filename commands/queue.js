@@ -108,6 +108,9 @@ module.exports = {
       return message.channel.send(Pages[0]);
     else client.Pagination(message, Pages);
   },
+
+//SLASH COMMANDS
+
   SlashCommand: {
     /*
     options: [

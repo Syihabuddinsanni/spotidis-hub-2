@@ -37,6 +37,8 @@ const { TrackUtils } = require("erela.js");
     player.queue.remove(Number(args[0]) - 1);
   },
 
+//SLASH COMMANDS
+
   SlashCommand: {
     options: [
       {

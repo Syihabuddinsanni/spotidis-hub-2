@@ -46,6 +46,8 @@ module.exports = {
     return message.channel.send(QueueEmbed);
   },
 
+//SLASH COMMANDS
+
   SlashCommand: {
     /**
      *
