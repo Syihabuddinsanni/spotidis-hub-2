@@ -29,6 +29,7 @@
   },
   "homepage": "https://github.com/SudhanPlayz/Discord-MusicBot#readme",
   "dependencies": {
+    "amethyste-api": "^1.1.5",
     "colors": "^1.4.0",
     "cpu-stat": "^2.0.1",
     "discord.js": "^12.5.3",
