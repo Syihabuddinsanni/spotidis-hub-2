@@ -14,12 +14,12 @@ module.exports = {
       let oldate = new Date().getMilliseconds()
       message.channel.send(new MessageEmbed()
         .setColor("#00ff00")
-        .setTitle(`🏓 Pinging....`)
+        .setTitle(`<a:ping:867672110675656715> Pinging....`)
       ).then(msg=>{
         let newtime = new Date().getMilliseconds() - oldate;
         msg.edit(new MessageEmbed()
           .setColor("#00ff00")
-          .setDescription(`:hourglass: ${client.ws.ping}ms\n\n:stopwatch: ${client.ws.ping + newtime}ms\n\n:heartbeat: ${newtime}ms`)
+          .setDescription(`<a:ping:867672110675656715> ${client.ws.ping}ms\n\n<a:uptime:867672113136271430> ${client.ws.ping + newtime}ms\n\n:heartbeat: ${newtime}ms`)
         );
       })
     } catch (e) {
