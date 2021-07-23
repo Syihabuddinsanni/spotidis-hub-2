@@ -29,12 +29,12 @@ module.exports = {
               `Commands of ${client.user.username}`,
               client.config.IconURL
             )
-            .setColor("#0A179A")
+            .setColor("#545BEE")//BIRU
             .addFields( //edit sekarang
-              { name: '<:blurple_inbox:867434854529499146> __Images__', value: '> `avatar` | `jail` | `wasted` | `triggered` | `captcha` | `' },
+              { name: '<:blurple_inbox:867434854529499146> __Images__', value: '> `avatar` | `jail` | `wasted` | `triggered` | `captcha` | `fire` |  ' },
               { name: '<:blurple_undeafened:867399815255556106> __Music__', value: '> `bassboost <none|low|medium|high>` | `play` | `pause` | `search` | `nowplaying` | `queue` | `volume` | `skip` | `skipto` | `seek` | `resume` | `remove` | `grab` | `disconnect` | `clear` | `loop` | `loopqueue` | `lyrics`'},
-              { name: '<:blurple_settings:867424376236408832> __Utility__', value: '> `invite` | `stats` | `config` | `ping` | `delete` | `about` | `instasearch`' },
-              { name: '<:blurple_slashcommands:867434770819711006> __Activities__', value: '> `youtube` | `betrayal.io` | `poker night` | `fishington.io` | `' },
+              { name: '<:blurple_settings:867424376236408832> __Utility__', value: '> `invite` | `stats` | `config` | `ping` | `delete` | `about` | `instasearch` | `ascii`' },
+              { name: '<:blurple_slashcommands:867434770819711006> __Activities__', value: '> `youtube` | `betrayal.io` | `poker night` | `fishington.io` | ' },
               { name: '\n<:blank:864149186811133972> ', value: '  [<:blurple_link:867400057350389790> **Support Server**](https://discord.gg/shehdSk8s3) | <:blurple_github:867418757947981834> [**GitHub**](https://github.com/syihabuddin) | <:CertifiedModerator:867418712327454730> By [**Sh3hub1337**](https://github.com/syihabuddin) | <:1002blurplelike:867760864374292501> [**Donate**](https://saweria.co/sh3hub1337)' },
               
             )
@@ -124,7 +124,7 @@ SlashCommand: {
               `Commands of ${client.user.username}`,
               client.config.IconURL
             )
-            .setColor("#0A179A")
+            .setColor("#545BEE")
             .setFooter(
               `To get info of each command type ${
                 GuildDB ? GuildDB.prefix : client.config.DefaultPrefix
@@ -232,7 +232,7 @@ module.exports = {
               `Commands of ${client.user.username}`,
               client.config.IconURL
             )
-            .setColor("#0A179A")
+            .setColor("#545BEE")
             .setFooter(
               `To get info of each command type ${
                 GuildDB ? GuildDB.prefix : client.config.DefaultPrefix
@@ -315,7 +315,7 @@ SlashCommand: {
               `Commands of ${client.user.username}`,
               client.config.IconURL
             )
-            .setColor("#0A179A")
+            .setColor("#545BEE")
             .setFooter(
               `To get info of each command type ${
                 GuildDB ? GuildDB.prefix : client.config.DefaultPrefix

@@ -1,66 +1,27 @@
+const { Client, Message, MessageEmbed } = require('discord.js');
 
-const { MessageEmbed } = require("discord.js");
 module.exports = {
-
-      name: "avatar",
-      description: "Shows Avatar",
-      category: "image",
-
-      usage: "[username | nickname | mention | ID](optional)",
-    aliases: ["av"],
-    /**
-     *
-     * @param {import("../structures/DiscordMusicBot")} client
-     * @param {import("discord.js").Message} message
-     * @param {string[]} args
-     * @param {*} param3
+    name: "avatar",
+    aliases: ['av', 'pfp', 'pic'],
+    description: "Get your own or someone else's avatar",
+    usage: "[user mention]",
+    /** 
+     * @param {Client} client 
+     * @param {Message} message 
+     * @param {String[]} args 
      */
-    run: async (bot, message, args) => { 
-      
-      let user = message.mentions.members.first() || message.guild.members.cache.get(args[0]) || message.guild.members.cache.find(r => r.user.username.toLowerCase() === args.join(' ').toLocaleLowerCase()) || message.guild.members.cache.find(r => r.displayName.toLowerCase() === args.join(' ').toLocaleLowerCase()) || message.member;
-  
-      if (args[0]) {
-        message.channel.send({
-          embed: {
-  
-            title: `${user.user.username}'s Avatar`,
-  
-            color: 0xFFEFD5,
-  
-            image: {
-              url: `${user.user.displayAvatarURL({dynamic: true})}` + '?size=4096'
-            },
-  
-            timestamp: new Date(),
-  
-            footer: {
-              text: message.guild.name,
-              icon_url: message.guild.iconURL()
-            }
-          }
-        })
-      }
-      else if (!args[0]) {
-        message.channel.send({
-          embed: {
-  
-            title: `${user.user.username}'s Avatar`,
-  
-            color: 0xFFEFD5,
-  
-            image: {
-              url: `${user.user.displayAvatarURL({ dynamic: true })}` + '?size=4096'
-            },
-  
-            timestamp: new Date(),
-  
-            footer: {
-              text: message.guild.name,
-              icon_url: message.guild.iconURL()
-            }
-  
-          }
-        })
-      }
+    run: async (client, message, args) => {
+
+        const user = message.mentions.users.first() || message.author
+
+        let av = new MessageEmbed()
+            .setColor("#545BEE")
+            .setTitle(`${user.tag} Avatar`)
+            .setImage(user.displayAvatarURL({ dynamic: true, size: 512 }))
+            .setDescription(`<:blurple_image:867426661918441483> [PNG](${user.avatarURL({ format: "png" })}) | <:blurple_image:867426661918441483> [JPG](${user.avatarURL({ format: "jpg" })}) | <:blurple_image:867426661918441483> [WEBP](${user.avatarURL({ format: 'webp' })}) |` )
+            .setFooter(client.user.tag)
+ //.setFooter( message.guild.name + message.guild.iconURL)
+        message.channel.send(av)
+
     }
-  }
+}
