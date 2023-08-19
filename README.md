@@ -1,1 +1,2 @@
-didnt ask
+#### Sadis Official Discord Bot
+using lavalink 
