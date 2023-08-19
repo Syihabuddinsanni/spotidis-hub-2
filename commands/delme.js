@@ -33,6 +33,7 @@ run: async (client, message, args, { GuildDB }) => {
             .catch((err) => {
                 message.react('<a:warn:866161245232693291>')
                 message.channel.send("Error : " + err)
+		    //this useless btw
             })
         }
 }};
